@@ -1,0 +1,22 @@
+# ModSecurity + OWASP Core Rule Set (CRS) - signature-based WAF baseline.
+# It sits as a reverse proxy in front of the SAME test API (running on the host at port 8000)
+# and is put in BLOCKING mode. We then send the same attacks through it and through APIShield
+# and compare what each one blocks.
+services:
+  modsecurity:
+    image: owasp/modsecurity-crs:nginx
+    container_name: apishield_modsec_baseline
+    ports:
+      - "8081:8080"                      # ModSecurity WAF is reachable at http://localhost:8081
+    environment:
+      # forward clean traffic to the test API running on the host
+      BACKEND: "http://host.docker.internal:8000"
+      PROXY_SSL: "off"
+      # put the WAF in real blocking mode with the standard CRS anomaly thresholds
+      MODSEC_RULE_ENGINE: "On"
+      PARANOIA: "1"
+      ANOMALY_INBOUND: "5"
+      ANOMALY_OUTBOUND: "4"
+      MODSEC_AUDIT_ENGINE: "RelevantOnly"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

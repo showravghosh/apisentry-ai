@@ -1,0 +1,9 @@
+attack,ModSecurity (CRS),APIShield
+sql_injection,1.0,0.96
+parameter_tampering,0.0,1.0
+bola,0.0,1.0
+brute_force,0.0,1.0
+credential_stuffing,0.0,1.0
+api_flooding,0.0,1.0
+token_replay,0.0,0.96
+normal (false positive),0.0,0.0
