@@ -28,4 +28,4 @@ abstract: >-
   The repository includes the gateway, a vulnerable test API, a traffic generator, the machine-learning
   pipeline, a labelled eight-class dataset (11,415 requests), validation notebooks, and a ModSecurity
   baseline comparison.
-# doi: "10.5281/zenodo.XXXXXXX"   # add the Zenodo DOI here after the first release is archived
+doi: "10.5281/zenodo.22143601"
