@@ -1,0 +1,9 @@
+class,payload_only_F1,payload_only_std,full_F1,full_std
+api_flooding,0.7506,0.0132,0.959,0.0092
+bola,0.0,0.0,0.9562,0.0151
+brute_force,0.8876,0.02,0.9795,0.0101
+credential_stuffing,0.9218,0.0333,0.9451,0.0267
+normal,0.8386,0.0074,0.9825,0.003
+parameter_tampering,0.9227,0.0152,0.9975,0.005
+sql_injection,1.0,0.0,1.0,0.0
+token_replay,0.0,0.0,1.0,0.0

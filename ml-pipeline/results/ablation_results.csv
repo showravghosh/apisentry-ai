@@ -1,0 +1,4 @@
+Configuration,Macro-F1,Macro-F1_std,Accuracy,Accuracy_std,FPR,FPR_std
+Payload features only,0.6652,0.0054,0.7839,0.0071,0.1319,0.0134
+Behavioural features only,0.9102,0.0077,0.9395,0.0064,0.0404,0.0075
+Payload + behavioural (full APIShield),0.9775,0.0064,0.9788,0.0042,0.0138,0.0025
