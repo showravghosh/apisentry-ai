@@ -300,4 +300,14 @@ If you use this software or dataset, please cite it using the metadata in **`CIT
 
 The dataset, code and trained models are archived at **https://doi.org/10.5281/zenodo.22143601** (dataset under CC BY 4.0). Source code is released under the terms in **`LICENSE`**.
 
-**Authors:** Showrav Ghosh · Md Manirul Islam — American International University-Bangladesh (AIUB).
+## Authors
+
+**Showrav Ghosh** — Author, developer, and researcher.
+Department of Computer Science, American International University-Bangladesh (AIUB), Dhaka, Bangladesh.
+Email: 23-50666-1@student.aiub.edu · ORCID: https://orcid.org/0009-0008-6639-9698
+
+**Md. Manirul Islam** — Supervisor and corresponding author.
+Associate Professor; Director, IT (Network Operations); and Director, Institute of Continuing Education, American International University-Bangladesh (AIUB), Dhaka, Bangladesh. A cybersecurity expert and IT strategist with over 23 years of experience in network architecture, digital security, and advanced computing.
+Email: manirul@aiub.edu · Profile: https://www.aiub.edu/faculty-list/faculty-profile?q=manirul
+
+American International University-Bangladesh (AIUB), 408/1, Kuratoli, Khilkhet, Dhaka 1229, Bangladesh.
