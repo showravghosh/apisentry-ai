@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software or dataset, please cite it as below."
+title: "APIShield: A Real-Time Hybrid Machine Learning Gateway for Detecting Behavioural and Payload-Based API Attacks"
+authors:
+  - family-names: Ghosh
+    given-names: Showrav
+    orcid: "https://orcid.org/0009-0008-6639-9698"
+type: software
+version: "v1.0.0"
+date-released: "2026-08-28"
+license: MIT
+repository-code: "https://github.com/showravghosh/apishield-ai"
+url: "https://github.com/showravghosh/apishield-ai"
+keywords:
+  - API security
+  - API misuse detection
+  - machine learning
+  - behavioural analysis
+  - real-time enforcement
+  - anomaly detection
+  - explainable AI
+  - web security
+abstract: >-
+  APIShield is a real-time, hybrid machine-learning security gateway that detects and blocks
+  seven API attack types (SQL injection, parameter tampering, brute force, credential stuffing,
+  broken object level authorization, API flooding and token replay) by jointly analysing request
+  payload features and causal behavioural features over per-IP and per-token sliding windows.
+  The repository includes the gateway, a vulnerable test API, a traffic generator, the machine-learning
+  pipeline, a labelled eight-class dataset (11,415 requests), validation notebooks, and a ModSecurity
+  baseline comparison.
+# doi: "10.5281/zenodo.XXXXXXX"   # add the Zenodo DOI here after the first release is archived

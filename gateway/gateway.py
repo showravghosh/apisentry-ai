@@ -44,7 +44,7 @@ state_long = {}
 token_state = {}
 token_state_long = {}
 
-app = FastAPI(title="APIShield AI Gateway")
+app = FastAPI(title="APISentry AI Gateway")
 
 DEC_FIELDS = ["timestamp", "ip", "method", "endpoint", "predicted", "risk", "decision"]
 if not os.path.exists(DECISION_LOG):
@@ -243,11 +243,11 @@ async def proxy(path: str, request: Request):
         meta["dq"].append((meta["now"], 1, meta["is_login"], meta["ep_norm"], meta["tuser"]))
         meta["dq_long"].append(meta["now"])
         status = 403 if decision == "BLOCK" else 429
-        msg = "Request blocked by APIShield AI" if decision == "BLOCK" else "Rate limited by APIShield AI"
+        msg = "Request blocked by APISentry AI" if decision == "BLOCK" else "Rate limited by APISentry AI"
         return Response(
             content=json.dumps({"error": msg, "attack_type": pred, "risk_score": round(risk, 3)}),
             status_code=status, media_type="application/json",
-            headers={"X-APIShield-Decision": decision, "X-APIShield-Risk": str(round(risk, 3))})
+            headers={"X-APISentry-Decision": decision, "X-APISentry-Risk": str(round(risk, 3))})
 
     url = BACKEND + request.url.path
     if request.url.query:
@@ -265,6 +265,6 @@ async def proxy(path: str, request: Request):
 
     return Response(content=r.content, status_code=r.status_code,
                     media_type=r.headers.get("content-type"),
-                    headers={"X-APIShield-Decision": decision,
-                             "X-APIShield-Risk": str(round(risk, 3)),
-                             "X-APIShield-Predicted": pred})
+                    headers={"X-APISentry-Decision": decision,
+                             "X-APISentry-Risk": str(round(risk, 3)),
+                             "X-APISentry-Predicted": pred})

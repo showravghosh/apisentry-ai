@@ -1,4 +1,4 @@
-attack,ModSecurity (CRS),APIShield
+attack,ModSecurity (CRS),APISentry
 sql_injection,1.0,0.96
 parameter_tampering,0.0,1.0
 bola,0.0,1.0

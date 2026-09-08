@@ -1,8 +1,8 @@
-# APIShield AI - Live Demo Guide
+# APISentry AI - Live Demo Guide
 
 Every attack below is a real attack technique, run only on our own gateway
 (localhost). Watch the dashboard while you run each one. The first few requests
-may be ALLOWED, then APIShield BLOCKS them. This is normal: the tool decides
+may be ALLOWED, then APISentry BLOCKS them. This is normal: the tool decides
 from behavior, not from a single request.
 
 ## Start
@@ -42,10 +42,10 @@ for body in '{"product_id":1,"quantity":-5}' '{"product_id":1,"quantity":999999}
 TOKEN=$(curl -s -X POST http://localhost:9000/login -H "Content-Type: application/json" -d '{"username":"alice","password":"password123"}' | python3 -c "import sys,json;print(json.load(sys.stdin).get('access_token',''))")
 for i in $(seq 1 6); do curl -s -o /dev/null -w "IP 50.0.0.$i -> %{http_code}\n" "http://localhost:9000/products" -H "Authorization: Bearer $TOKEN" -H "X-Forwarded-For: 50.0.0.$i"; sleep 0.3; done
 
-## Show the difference (without APIShield)
+## Show the difference (without APISentry)
 
 sqlmap -u "http://localhost:8000/search?q=test" --batch --level=2 --risk=2
-(here requests reach the app - APIShield is what stops them at the edge)
+(here requests reach the app - APISentry is what stops them at the edge)
 
 ## Stop
 

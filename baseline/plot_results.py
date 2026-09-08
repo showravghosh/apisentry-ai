@@ -17,7 +17,7 @@ for i, s in enumerate(systems):
     plt.bar(x + i * w, vals, w, label=s, color=colors[i % len(colors)])
 plt.xticks(x + w * (len(systems) - 1) / 2, attacks, rotation=30, ha="right")
 plt.ylabel("Detection / block rate (%)")
-plt.title("APIShield vs ModSecurity - detection by attack type", fontweight="bold")
+plt.title("APISentry vs ModSecurity - detection by attack type", fontweight="bold")
 plt.ylim(0, 105); plt.legend(); plt.grid(axis="y", alpha=0.3)
 plt.tight_layout(); plt.savefig("baseline/comparison_chart.png", dpi=150)
 print("Saved: baseline/comparison_chart.png")

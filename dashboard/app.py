@@ -6,7 +6,7 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
 DECISION_LOG = os.path.join(os.path.dirname(__file__), "..", "gateway", "gateway_decisions.csv")
-app = FastAPI(title="APIShield AI Dashboard")
+app = FastAPI(title="APISentry AI Dashboard")
 
 DEC_COLORS = {"ALLOW": "#22c55e", "BLOCK": "#ef4444", "RATE_LIMIT": "#f59e0b"}
 TYPE_COLORS = {
@@ -66,7 +66,8 @@ def read_rows():
 
 
 def donut(allowed, blocked, limited):
-    total = max(allowed + blocked + limited, 1)
+    real_total = allowed + blocked + limited
+    total = max(real_total, 1)
     segs = [("#22c55e", allowed), ("#ef4444", blocked), ("#f59e0b", limited)]
     r = 70
     c = 2 * math.pi * r
@@ -79,7 +80,7 @@ def donut(allowed, blocked, limited):
                   f'stroke-dashoffset="{-off:.1f}" transform="rotate(-90 90 90)"/>')
         off += dash
     return (f'<svg width="180" height="180" viewBox="0 0 180 180">{parts}'
-            f'<text x="90" y="84" text-anchor="middle" fill="#e2e8f0" font-size="32" font-weight="800">{total}</text>'
+            f'<text x="90" y="84" text-anchor="middle" fill="#e2e8f0" font-size="32" font-weight="800">{real_total}</text>'
             f'<text x="90" y="106" text-anchor="middle" fill="#94a3b8" font-size="12">TOTAL</text></svg>')
 
 
@@ -139,10 +140,10 @@ def dashboard():
                   f'<td><span class="pill" style="background:{dc}">{r["decision"]}</span></td></tr>')
 
     html = f"""<!doctype html><html><head><meta charset="utf-8">
-<meta http-equiv="refresh" content="2"><title>APIShield AI</title><style>{CSS}</style></head><body>
+<meta http-equiv="refresh" content="2"><title>APISentry AI</title><style>{CSS}</style></head><body>
 <div class="top">
   <div class="brand"><div class="logo">A</div>
-    <div><h1>APIShield AI</h1><div class="sub">Real-time API Security Gateway &middot; live monitoring</div></div></div>
+    <div><h1>APISentry AI</h1><div class="sub">Real-time API Security Gateway &middot; live monitoring</div></div></div>
   <div class="threat"><div class="lvl" style="color:{lc}">&#9679; {level}</div><div class="lbl">Threat Level</div></div>
 </div>
 <div class="cards">

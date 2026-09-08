@@ -1,13 +1,13 @@
 """
-Baseline comparison: APIShield vs ModSecurity (OWASP CRS).
+Baseline comparison: APISentry vs ModSecurity (OWASP CRS).
 
 Sends the SAME set of attacks (and normal traffic) through two systems and records
 what each one BLOCKS, so we can show that a signature-based WAF misses the behavioural
-API attacks that APIShield detects.
+API attacks that APISentry detects.
 
 Targets (all proxy to the same test API on port 8000):
   - ModSecurity WAF : http://localhost:8081   (from baseline/docker-compose.yml)
-  - APIShield       : http://localhost:9000   (from ./run.sh)
+  - APISentry       : http://localhost:9000   (from ./run.sh)
 
 Run (from project root, with the traffic-generator venv that has 'requests'):
   traffic-generator/venv/bin/python baseline/run_comparison.py
@@ -20,7 +20,7 @@ import requests
 TEST_API = "http://localhost:8000"          # direct backend (to fetch a valid token)
 TARGETS = {
     "ModSecurity (CRS)": "http://localhost:8081",
-    "APIShield":         "http://localhost:9000",
+    "APISentry":         "http://localhost:9000",
 }
 N = 25                                        # requests per attack
 TIMEOUT = 5

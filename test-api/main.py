@@ -10,7 +10,7 @@ from logger import LoggingMiddleware
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="APIShield Test API",
+    title="APISentry Test API",
     description="AI security gateway test target REST API",
     version="1.0.0",
 )
@@ -20,7 +20,7 @@ app.add_middleware(LoggingMiddleware)
 
 @app.get("/")
 def root():
-    return {"message": "APIShield Test API is running", "docs": "/docs"}
+    return {"message": "APISentry Test API is running", "docs": "/docs"}
 
 
 @app.post("/register", tags=["auth"])

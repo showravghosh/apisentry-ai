@@ -1,12 +1,12 @@
 """
-ablation.py — APIShield ablation study (feature-view contribution), 5-fold cross-validated.
+ablation.py — APISentry ablation study (feature-view contribution), 5-fold cross-validated.
 
-Shows that the causal behavioural features are what let APIShield detect the behavioural
+Shows that the causal behavioural features are what let APISentry detect the behavioural
 API attacks (BOLA, token replay, flooding, brute force, credential stuffing) that payload
 features alone cannot. Uses the exact feature set of the deployed gateway model, and reports
 every value as a 5-fold cross-validation mean +/- standard deviation (robust, not a single split).
 
-Run from the repository root (~/apishield-ai) with the ml-pipeline virtual environment:
+Run from the repository root (~/apisentry-ai) with the ml-pipeline virtual environment:
     ml-pipeline/venv/bin/python ml-pipeline/ablation.py
 
 Outputs (in ml-pipeline/results/):
@@ -44,9 +44,9 @@ labels = sorted(pd.unique(y))
 configs = [
     ("Payload features only", payload),
     ("Behavioural features only", behavioural),
-    ("Payload + behavioural (full APIShield)", all_features),
+    ("Payload + behavioural (full APISentry)", all_features),
 ]
-PAY, FULL = "Payload features only", "Payload + behavioural (full APIShield)"
+PAY, FULL = "Payload features only", "Payload + behavioural (full APISentry)"
 
 skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 cfg = {n: {"f1": [], "acc": [], "fpr": []} for n, _ in configs}
@@ -99,7 +99,7 @@ plt.bar(x - w / 2, res["Macro-F1"], w, yerr=res["Macro-F1_std"], capsize=4, labe
 plt.bar(x + w / 2, res["FPR"], w, yerr=res["FPR_std"], capsize=4, label="FPR (normal)", color="#c62828")
 plt.xticks(x, res["Configuration"], rotation=12, ha="right", fontsize=9)
 plt.ylim(0, 1.05); plt.ylabel("score (5-fold mean)"); plt.legend()
-plt.title("APIShield ablation: contribution of feature views", fontweight="bold")
+plt.title("APISentry ablation: contribution of feature views", fontweight="bold")
 for i, v in enumerate(res["Macro-F1"]):
     plt.text(i - w / 2, v + 0.03, f"{v:.2f}", ha="center", fontsize=8, fontweight="bold")
 plt.tight_layout(); plt.savefig(f"{OUT}/ablation.png", dpi=150)

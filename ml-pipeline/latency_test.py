@@ -50,15 +50,15 @@ def main():
     g_lat, g_ok = bench(GATEWAY, gateway=True)
 
     b_mean = summarize("BACKEND (direct)", b_lat, b_ok)
-    g_mean = summarize("GATEWAY (APIShield AI)", g_lat, g_ok)
+    g_mean = summarize("GATEWAY (APISentry AI)", g_lat, g_ok)
 
     print(f"\nGateway overhead: {g_mean - b_mean:.2f} ms per request")
 
     plt.figure(figsize=(6, 5))
-    plt.bar(["Backend\n(direct)", "Gateway\n(APIShield AI)"], [b_mean, g_mean],
+    plt.bar(["Backend\n(direct)", "Gateway\n(APISentry AI)"], [b_mean, g_mean],
             color=["#22c55e", "#3b82f6"])
     plt.ylabel("Mean latency (ms)")
-    plt.title("Latency: Direct vs APIShield Gateway", fontweight="bold")
+    plt.title("Latency: Direct vs APISentry Gateway", fontweight="bold")
     for i, v in enumerate([b_mean, g_mean]):
         plt.text(i, v, f"{v:.1f} ms", ha="center", va="bottom", fontweight="bold")
     plt.tight_layout()

@@ -12,7 +12,7 @@ import attack_token_replay
 
 def main(scale):
     print("=" * 50)
-    print(f"APIShield dataset generation (scale={scale})")
+    print(f"APISentry dataset generation (scale={scale})")
     print("=" * 50)
     normal_traffic.run(scale * 100)
     attack_sql_injection.run(scale * 8)
