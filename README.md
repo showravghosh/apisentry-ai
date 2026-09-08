@@ -82,7 +82,7 @@ The deployed enforcement path uses the **CatBoost classifier + behavioural guard
 ## Project structure
 
 ```
-apishield-ai/
+apisentry-ai/
 ├── test-api/              Target REST API (login, products, cart, users, orders)
 │   ├── main.py                FastAPI app and routes
 │   ├── auth.py                Authentication / token handling
@@ -165,8 +165,8 @@ Then **log out and log back in once**, so Docker works without `sudo`.
 ## 2. Download the project
 
 ```bash
-git clone https://github.com/showravghosh/apishield-ai.git
-cd apishield-ai
+git clone https://github.com/showravghosh/apisentry-ai.git
+cd apisentry-ai
 ```
 
 ---

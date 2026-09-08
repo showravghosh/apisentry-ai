@@ -9,8 +9,8 @@ type: software
 version: "v1.0.0"
 date-released: "2026-08-28"
 license: MIT
-repository-code: "https://github.com/showravghosh/apishield-ai"
-url: "https://github.com/showravghosh/apishield-ai"
+repository-code: "https://github.com/showravghosh/apisentry-ai"
+url: "https://github.com/showravghosh/apisentry-ai"
 keywords:
   - API security
   - API misuse detection
