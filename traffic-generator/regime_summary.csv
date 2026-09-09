@@ -1,0 +1,5 @@
+regime,runs,det_mean,det_sd,det_ci_low,det_ci_high,fp_mean,fp_sd,fp_ci_low,fp_ci_high
+baseline,5,0.88,0.0,0.88,0.88,0.0,0.0,0.0,0.0
+nat_shared,5,0.88,0.0,0.88,0.88,0.58,0.0,0.58,0.58
+vpn_rotate,5,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+bursty,5,0.88,0.0,0.88,0.88,0.65,0.0,0.65,0.65

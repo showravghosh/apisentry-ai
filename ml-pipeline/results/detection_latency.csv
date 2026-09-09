@@ -1,0 +1,8 @@
+attack,episodes,request_recall,episode_detect_rate,median_reqs_before_block,median_time_to_detect_s,caught_on_first_req_pct
+api_flooding,40,0.988,1.0,0,0.0,0.875
+bola,80,1.0,1.0,0,0.0,1.0
+brute_force,80,0.977,1.0,0,0.0,0.875
+credential_stuffing,300,0.953,0.953,0,0.0,0.953
+parameter_tampering,80,1.0,1.0,0,0.0,1.0
+sql_injection,80,1.0,1.0,0,0.0,1.0
+token_replay,80,1.0,1.0,0,0.0,1.0

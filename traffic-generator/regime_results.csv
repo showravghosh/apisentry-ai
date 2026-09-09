@@ -1,0 +1,5 @@
+regime,attack_block_rate,legit_false_positive_rate
+baseline,0.88,0.0
+nat_shared,0.88,0.58
+vpn_rotate,0.0,0.0
+bursty,0.88,0.65
