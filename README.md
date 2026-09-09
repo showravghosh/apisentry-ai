@@ -295,7 +295,7 @@ Logs are written to `/tmp/apisentry_backend.log`, `/tmp/apisentry_gateway.log`, 
 
 If you use this software or dataset, please cite it using the metadata in **`CITATION.cff`**.
 
-The dataset, code and trained models are archived at **https://doi.org/10.5281/zenodo.22143601** (dataset under CC BY 4.0). Source code is released under the terms in **`LICENSE`**.
+The dataset, code and trained models are archived at **https://doi.org/10.5281/zenodo.22671029** (dataset under CC BY 4.0). Source code is released under the terms in **`LICENSE`**.
 
 ## Authors
 
