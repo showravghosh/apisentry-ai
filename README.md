@@ -1,8 +1,8 @@
-# APIShield AI
+# APISentry AI
 
 **A real-time, AI-powered security gateway that protects REST APIs from behavioural and payload-based attacks.**
 
-APIShield AI sits in front of your API as a reverse proxy. Every incoming request passes through APIShield *first*: it extracts features from the request, scores it with machine-learning models, and either forwards the request to the real API (allow) or blocks it with an HTTP `403` before it ever reaches your server. Unlike a traditional firewall that only matches fixed signatures, APIShield also **learns what normal traffic looks like**, so it catches both known attacks and previously unseen (zero-day) ones.
+APISentry AI sits in front of your API as a reverse proxy. Every incoming request passes through APISentry *first*: it extracts features from the request, scores it with machine-learning models, and either forwards the request to the real API (allow) or blocks it with an HTTP `403` before it ever reaches your server. Unlike a traditional firewall that only matches fixed signatures, APISentry also **learns what normal traffic looks like**, so it catches both known attacks and previously unseen (zero-day) ones.
 
 It detects **seven API attack types**:
 
@@ -21,7 +21,6 @@ It detects **seven API attack types**:
 ---
 
 ## Table of Contents
-
 1. [How it works](#how-it-works)
 2. [The AI inside](#the-ai-inside-layered-defence)
 3. [Project structure](#project-structure)
@@ -43,7 +42,7 @@ It detects **seven API attack types**:
 
 ```
                           ┌─────────────────────────────┐
-   User request  ───────► │      APIShield Gateway       │
+   User request  ───────► │      APISentry Gateway       │
                           │  (feature extraction + AI)   │
                           └──────────────┬──────────────┘
                                          │ decision
@@ -55,7 +54,6 @@ It detects **seven API attack types**:
 ```
 
 Every request is turned into two kinds of features:
-
 - **Payload features** — SQL-keyword density, special-character counts, numeric anomalies, length and field structure. These catch attacks whose evidence is *inside a single request* (mainly injection and tampering).
 - **Behavioural features** — request rate, failed-login ratio, login attempts, distinct objects touched, and token reuse, all computed over **causal per-source and per-token time windows**. These catch attacks that are only visible *across many requests* (BOLA, brute force, credential stuffing, flooding, token replay).
 
@@ -65,7 +63,7 @@ The gateway then produces a **risk score** and applies a graded policy: allow, r
 
 ## The AI inside (layered defence)
 
-No single model is best at everything, so APIShield trains and evaluates several and deploys the strongest combination:
+No single model is best at everything, so APISentry trains and evaluates several and deploys the strongest combination:
 
 | Model | Role |
 |-------|------|
@@ -75,7 +73,7 @@ No single model is best at everything, so APIShield trains and evaluates several
 | **LSTM** (deep learning) | Learns the temporal pattern of a whole session |
 | **GNN** (graph neural network) | Models "who accesses whose data" for BOLA detection |
 
-The deployed enforcement path uses the **CatBoost classifier + behavioural guard + high-precision signature rules + threshold policy**. The other models are trained and evaluated for research comparison. APIShield also explains its decisions with **SHAP** (why a given request was blocked).
+The deployed enforcement path uses the **CatBoost classifier + behavioural guard + high-precision signature rules + threshold policy**. The other models are trained and evaluated for research comparison. APISentry also explains its decisions with **SHAP** (why a given request was blocked).
 
 ---
 
@@ -136,8 +134,8 @@ apisentry-ai/
 │   └── docker-compose.yml     ModSecurity container
 │
 ├── validation/            Jupyter notebooks
-│   ├── APIShield_Model_Validation.ipynb        Own dataset / own model
-│   └── APIShield_Benchmark_Validation.ipynb    Public CSIC 2010 / ECML-PKDD
+│   ├── APISentry_Model_Validation.ipynb        Own dataset / own model
+│   └── APISentry_Benchmark_Validation.ipynb    Public CSIC 2010 / ECML-PKDD
 │
 ├── setup.sh   run.sh   stop.sh   reset.sh   demo.sh    Helper scripts
 ├── DEMO_GUIDE.md          Exact commands to trigger all 7 attacks
@@ -195,10 +193,10 @@ This starts four services automatically:
 |---------|------|------------|
 | Database | — | PostgreSQL (in Docker) |
 | Backend API | `8000` | The target REST API |
-| AI security gateway | `9000` | APIShield — the main tool |
+| AI security gateway | `9000` | APISentry — the main tool |
 | Dashboard | `8080` | Live security dashboard |
 
-When it prints **`APIShield AI is RUNNING`**, everything is up.
+When it prints **`APISentry AI is RUNNING`**, everything is up.
 
 ---
 
@@ -243,7 +241,6 @@ Or run real attacks yourself and watch them get blocked in real time. See **`DEM
 ## Results
 
 Measured on the project's own labelled dataset (**11,415 requests across eight classes**):
-
 - **~97% macro-F1** under 5-fold cross-validation, with stable results across folds.
 - **Realistic, explainable performance** — not an artificial 100%; the residual errors (mostly BOLA vs. normal browsing) are interpretable.
 - The **anomaly detector catches attacks it was never trained on** (zero-day setting).
@@ -285,12 +282,12 @@ The two notebooks in `validation/` reproduce the primary evaluation on the own d
 
 | Problem | Fix |
 |---------|-----|
-| **Dashboard does not open** | Run `pgrep -f uvicorn` — you should see three process IDs. If not, check `cat /tmp/apishield_gateway.log`. |
+| **Dashboard does not open** | Run `pgrep -f uvicorn` — you should see three process IDs. If not, check `cat /tmp/apisentry_gateway.log`. |
 | **`docker: permission denied`** | Log out and back in (so your user joins the `docker` group), or run with `sudo`. |
 | **Port already in use** | Run `./stop.sh` first, then `./run.sh` again. |
 | **Backend not seeded / empty data** | Re-run `./run.sh`; it re-seeds the database on start. |
 
-Logs are written to `/tmp/apishield_backend.log`, `/tmp/apishield_gateway.log`, and `/tmp/apishield_dashboard.log`.
+Logs are written to `/tmp/apisentry_backend.log`, `/tmp/apisentry_gateway.log`, and `/tmp/apisentry_dashboard.log`.
 
 ---
 
