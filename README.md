@@ -323,6 +323,6 @@ Email: 23-50666-1@student.aiub.edu · ORCID: https://orcid.org/0009-0008-6639-96
 
 **Md. Manirul Islam** — Supervisor and corresponding author.
 Associate Professor; Director, IT (Network Operations); and Director, Institute of Continuing Education, American International University-Bangladesh (AIUB), Dhaka, Bangladesh. A cybersecurity expert and IT strategist with over 23 years of experience in network architecture, digital security, and advanced computing.
-Email: manirul@aiub.edu · Profile: https://www.aiub.edu/faculty-list/faculty-profile?q=manirul
+Email: manirul@aiub.edu · ORCID: https://orcid.org/0009-0007-9779-7915 · Profile: https://www.aiub.edu/faculty-list/faculty-profile?q=manirul
 
 American International University-Bangladesh (AIUB), 408/1, Kuratoli, Khilkhet, Dhaka 1229, Bangladesh.
