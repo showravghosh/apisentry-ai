@@ -100,6 +100,7 @@ apisentry-ai/
 │   ├── attack_parameter_tampering.py
 │   ├── attack_token_replay.py
 │   ├── adversarial_test.py    Adversarial / evasion testing
+│   ├── regime_test3.py        Network-regime robustness (NAT / rotation / bursty), 5 seeded runs
 │   ├── run_all.py             Generate the full labelled dataset
 │   ├── demo.py live_demo.py   Live traffic for demos
 │   └── dataset/traffic_logs.csv   The generated labelled dataset
@@ -114,6 +115,12 @@ apisentry-ai/
 │   ├── ensemble.py            Combine models
 │   ├── cross_validate.py      5-fold cross-validation
 │   ├── ablation.py            Feature-view / component ablations
+│   ├── disjoint_split.py      Source-address-disjoint generalisation split
+│   ├── rule_threshold_sweep.py  Payload-signature threshold selection
+│   ├── cred_feature_ablation.py Distinct-account feature ablation
+│   ├── detection_latency.py   Event-level detection latency
+│   ├── knn_benchmark.py       KNN inference-cost / scaling baseline
+│   ├── session_level_test.py  Session-level significance test (Wilcoxon + bootstrap)
 │   ├── latency_test.py        Per-request runtime measurement
 │   ├── shap_explain.py        SHAP explainability figures
 │   ├── build_gateway_model.py Export the deployed gateway model
@@ -130,6 +137,7 @@ apisentry-ai/
 │
 ├── baseline/              ModSecurity (OWASP CRS) comparison
 │   ├── run_comparison.py      Run the same traffic through a signature WAF
+│   ├── run_comparison5.py     5-seed ModSecurity vs APISentry comparison (pooled, Wilson CIs)
 │   ├── plot_results.py        Comparison chart
 │   └── docker-compose.yml     ModSecurity container
 │
@@ -270,8 +278,18 @@ ml-pipeline/venv/bin/python ml-pipeline/ablation.py
 ml-pipeline/venv/bin/python ml-pipeline/latency_test.py
 ml-pipeline/venv/bin/python ml-pipeline/shap_explain.py
 
-# 4. (optional) ModSecurity comparison
-baseline/run_comparison.py
+# 4. extended reviewer-response experiments
+ml-pipeline/venv/bin/python ml-pipeline/disjoint_split.py         # source-address-disjoint split
+ml-pipeline/venv/bin/python ml-pipeline/rule_threshold_sweep.py   # payload-signature threshold
+ml-pipeline/venv/bin/python ml-pipeline/cred_feature_ablation.py  # distinct-account feature
+ml-pipeline/venv/bin/python ml-pipeline/detection_latency.py      # event-level detection latency
+ml-pipeline/venv/bin/python ml-pipeline/knn_benchmark.py          # KNN inference-cost baseline
+ml-pipeline/venv/bin/python ml-pipeline/session_level_test.py     # session-level significance
+traffic-generator/venv/bin/python traffic-generator/regime_test3.py   # network-regime robustness (gateway running)
+
+# 5. (optional) ModSecurity comparison
+baseline/venv/bin/python baseline/run_comparison.py     # single run
+baseline/venv/bin/python baseline/run_comparison5.py    # 5 seeded runs, pooled with Wilson CIs
 ```
 
 The two notebooks in `validation/` reproduce the primary evaluation on the own dataset and the external validation on public benchmarks (CSIC 2010 and ECML/PKDD 2007).
