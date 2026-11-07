@@ -1,0 +1,126 @@
+[
+  {
+    "protocol": "leave_one_principal_out",
+    "test_principal": "alice",
+    "rebuild_within_partition": true,
+    "n_test": 5696,
+    "pooled": {
+      "macroF1": 0.9485,
+      "fpr": 0.0242,
+      "attack_recall": 0.9169,
+      "acc": 0.951
+    },
+    "per_class": {
+      "api_flooding": {
+        "prec": 0.974,
+        "rec": 0.888,
+        "f1": 0.929,
+        "n": 804
+      },
+      "bola": {
+        "prec": 0.85,
+        "rec": 0.778,
+        "f1": 0.812,
+        "n": 342
+      },
+      "brute_force": {
+        "prec": 0.983,
+        "rec": 0.961,
+        "f1": 0.972,
+        "n": 308
+      },
+      "credential_stuffing": {
+        "prec": 0.966,
+        "rec": 0.953,
+        "f1": 0.96,
+        "n": 150
+      },
+      "normal": {
+        "prec": 0.942,
+        "rec": 0.976,
+        "f1": 0.958,
+        "n": 3301
+      },
+      "parameter_tampering": {
+        "prec": 0.978,
+        "rec": 0.942,
+        "f1": 0.96,
+        "n": 190
+      },
+      "sql_injection": {
+        "prec": 1.0,
+        "rec": 1.0,
+        "f1": 1.0,
+        "n": 194
+      },
+      "token_replay": {
+        "prec": 1.0,
+        "rec": 0.993,
+        "f1": 0.996,
+        "n": 407
+      }
+    }
+  },
+  {
+    "protocol": "leave_one_principal_out",
+    "test_principal": "bob",
+    "rebuild_within_partition": true,
+    "n_test": 5719,
+    "pooled": {
+      "macroF1": 0.9396,
+      "fpr": 0.0372,
+      "attack_recall": 0.924,
+      "acc": 0.9467
+    },
+    "per_class": {
+      "api_flooding": {
+        "prec": 0.93,
+        "rec": 0.93,
+        "f1": 0.93,
+        "n": 801
+      },
+      "bola": {
+        "prec": 0.844,
+        "rec": 0.705,
+        "f1": 0.768,
+        "n": 322
+      },
+      "brute_force": {
+        "prec": 0.968,
+        "rec": 0.977,
+        "f1": 0.973,
+        "n": 309
+      },
+      "credential_stuffing": {
+        "prec": 0.902,
+        "rec": 0.98,
+        "f1": 0.939,
+        "n": 150
+      },
+      "normal": {
+        "prec": 0.949,
+        "rec": 0.963,
+        "f1": 0.956,
+        "n": 3415
+      },
+      "parameter_tampering": {
+        "prec": 0.99,
+        "rec": 0.938,
+        "f1": 0.963,
+        "n": 209
+      },
+      "sql_injection": {
+        "prec": 1.0,
+        "rec": 1.0,
+        "f1": 1.0,
+        "n": 203
+      },
+      "token_replay": {
+        "prec": 0.987,
+        "rec": 0.987,
+        "f1": 0.987,
+        "n": 310
+      }
+    }
+  }
+]

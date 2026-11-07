@@ -1,0 +1,271 @@
+{
+  "tools": {
+    "sqlmap": "1.10.10#stable",
+    "hydra": "Hydra v9.7 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).",
+    "ffuf": "ffuf version: 2.3.0",
+    "ab": "This is ApacheBench, Version 2.3 <$Revision: 1934973 $>"
+  },
+  "api": "vampi",
+  "results": {
+    "RateLimit_baseline": {
+      "sqlmap": {
+        "n": 35,
+        "n403": 0,
+        "n429": 0,
+        "n_other_4xx": 7,
+        "n_5xx": 8,
+        "n_err": 0,
+        "seconds": 4.8
+      },
+      "hydra_brute": {
+        "n": 80,
+        "n403": 0,
+        "n429": 8,
+        "n_other_4xx": 37,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 5.8
+      },
+      "stuffing_fixed": {
+        "n": 40,
+        "n403": 0,
+        "n429": 17,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 1.0
+      },
+      "stuffing_rotate": {
+        "n": 40,
+        "n403": 0,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 1.1
+      },
+      "ffuf_enumeration": {
+        "n": 40,
+        "n403": 0,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 2.9
+      },
+      "ffuf_token_reuse": {
+        "n": 30,
+        "n403": 0,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 8.2
+      },
+      "ab_flooding": {
+        "n": 300,
+        "n403": 0,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 88.6
+      }
+    },
+    "APISentry_original_fresh": {
+      "sqlmap": {
+        "n": 2132,
+        "n403": 2126,
+        "n429": 0,
+        "n_other_4xx": 2,
+        "n_5xx": 2,
+        "n_err": 0,
+        "seconds": 27.0
+      },
+      "hydra_brute": {
+        "n": 80,
+        "n403": 74,
+        "n429": 0,
+        "n_other_4xx": 4,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 5.2
+      },
+      "stuffing_fixed": {
+        "n": 40,
+        "n403": 33,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 0.9
+      },
+      "stuffing_rotate": {
+        "n": 40,
+        "n403": 0,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 1.6
+      },
+      "ffuf_enumeration": {
+        "n": 40,
+        "n403": 32,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 2.8
+      },
+      "ffuf_token_reuse": {
+        "n": 30,
+        "n403": 28,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 6.8
+      },
+      "ab_flooding": {
+        "n": 300,
+        "n403": 284,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 5.7
+      }
+    },
+    "APISentry_v9_default_profile": {
+      "sqlmap": {
+        "n": 84,
+        "n403": 45,
+        "n429": 15,
+        "n_other_4xx": 20,
+        "n_5xx": 2,
+        "n_err": 0,
+        "seconds": 300.2
+      },
+      "hydra_brute": {
+        "n": 80,
+        "n403": 0,
+        "n429": 61,
+        "n_other_4xx": 6,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 6.1
+      },
+      "stuffing_fixed": {
+        "n": 40,
+        "n403": 0,
+        "n429": 15,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 1.1
+      },
+      "stuffing_rotate": {
+        "n": 40,
+        "n403": 0,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 1.1
+      },
+      "ffuf_enumeration": {
+        "n": 40,
+        "n403": 0,
+        "n429": 11,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 3.2
+      },
+      "ffuf_token_reuse": {
+        "n": 30,
+        "n403": 24,
+        "n429": 1,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 7.3
+      },
+      "ab_flooding": {
+        "n": 300,
+        "n403": 0,
+        "n429": 281,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 6.2
+      }
+    },
+    "APISentry_v9_vampi_profile": {
+      "sqlmap": {
+        "n": 2132,
+        "n403": 2125,
+        "n429": 0,
+        "n_other_4xx": 3,
+        "n_5xx": 2,
+        "n_err": 0,
+        "seconds": 27.3
+      },
+      "hydra_brute": {
+        "n": 80,
+        "n403": 0,
+        "n429": 76,
+        "n_other_4xx": 2,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 5.4
+      },
+      "stuffing_fixed": {
+        "n": 40,
+        "n403": 0,
+        "n429": 37,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 0.5
+      },
+      "stuffing_rotate": {
+        "n": 40,
+        "n403": 0,
+        "n429": 24,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 0.7
+      },
+      "ffuf_enumeration": {
+        "n": 40,
+        "n403": 34,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 2.4
+      },
+      "ffuf_token_reuse": {
+        "n": 30,
+        "n403": 24,
+        "n429": 1,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 7.0
+      },
+      "ab_flooding": {
+        "n": 300,
+        "n403": 0,
+        "n429": 281,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 6.3
+      }
+    }
+  }
+}

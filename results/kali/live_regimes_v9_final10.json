@@ -1,0 +1,146 @@
+{
+  "baseline": {
+    "attack_blocked": 433,
+    "attack_total": 500,
+    "legit_blocked": 0,
+    "legit_total": 250,
+    "legit_403": 0,
+    "legit_429": 0,
+    "attack_403": 178,
+    "attack_429": 255,
+    "per_run_detection": [
+      0.87,
+      0.86,
+      0.86,
+      0.87,
+      0.87
+    ],
+    "per_run_fpr": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "shared_nat": {
+    "attack_blocked": 433,
+    "attack_total": 500,
+    "legit_blocked": 52,
+    "legit_total": 250,
+    "legit_403": 0,
+    "legit_429": 52,
+    "attack_403": 178,
+    "attack_429": 255,
+    "per_run_detection": [
+      0.86,
+      0.87,
+      0.87,
+      0.87,
+      0.86
+    ],
+    "per_run_fpr": [
+      0.2,
+      0.22,
+      0.18,
+      0.2,
+      0.24
+    ]
+  },
+  "address_rotation": {
+    "attack_blocked": 95,
+    "attack_total": 500,
+    "legit_blocked": 0,
+    "legit_total": 250,
+    "legit_403": 0,
+    "legit_429": 0,
+    "attack_403": 0,
+    "attack_429": 95,
+    "per_run_detection": [
+      0.16,
+      0.18,
+      0.21,
+      0.21,
+      0.19
+    ],
+    "per_run_fpr": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "bursty_client": {
+    "attack_blocked": 434,
+    "attack_total": 500,
+    "legit_blocked": 54,
+    "legit_total": 150,
+    "legit_403": 0,
+    "legit_429": 54,
+    "attack_403": 179,
+    "attack_429": 255,
+    "per_run_detection": [
+      0.87,
+      0.86,
+      0.87,
+      0.87,
+      0.87
+    ],
+    "per_run_fpr": [
+      0.467,
+      0.333,
+      0.467,
+      0.333,
+      0.2
+    ]
+  },
+  "mobile_client": {
+    "attack_blocked": 434,
+    "attack_total": 500,
+    "legit_blocked": 1,
+    "legit_total": 200,
+    "legit_403": 0,
+    "legit_429": 1,
+    "attack_403": 179,
+    "attack_429": 255,
+    "per_run_detection": [
+      0.87,
+      0.86,
+      0.87,
+      0.87,
+      0.87
+    ],
+    "per_run_fpr": [
+      0.0,
+      0.0,
+      0.0,
+      0.025,
+      0.0
+    ]
+  },
+  "shared_proxy_authenticated": {
+    "attack_blocked": 435,
+    "attack_total": 500,
+    "legit_blocked": 0,
+    "legit_total": 300,
+    "legit_403": 0,
+    "legit_429": 0,
+    "attack_403": 180,
+    "attack_429": 255,
+    "per_run_detection": [
+      0.87,
+      0.87,
+      0.87,
+      0.87,
+      0.87
+    ],
+    "per_run_fpr": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}

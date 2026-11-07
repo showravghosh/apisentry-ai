@@ -1,0 +1,16 @@
+{
+  "method": [
+    "GET",
+    "POST"
+  ],
+  "endpoint_norm": [
+    "/cart",
+    "/cart/add",
+    "/login",
+    "/order",
+    "/products",
+    "/products/{id}",
+    "/search",
+    "/users/{id}"
+  ]
+}

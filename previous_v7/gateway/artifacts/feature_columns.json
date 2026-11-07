@@ -1,0 +1,57 @@
+{
+  "source_key": "ip",
+  "num_cols": [
+    "body_special",
+    "body_sql_hits",
+    "body_max_num",
+    "body_min_num",
+    "body_has_neg",
+    "body_field_count",
+    "is_login",
+    "ip_req_10s",
+    "ip_fail_10s",
+    "ip_fail_ratio_10s",
+    "ip_login_10s",
+    "ip_uniq_ep_10s",
+    "ip_distinct_users_10s",
+    "token_ips_10s",
+    "glob_login_fail_10s",
+    "glob_login_users_10s",
+    "acct_fail_60s"
+  ],
+  "cat_cols": [
+    "method",
+    "endpoint_norm"
+  ],
+  "feature_cols": [
+    "body_special",
+    "body_sql_hits",
+    "body_max_num",
+    "body_min_num",
+    "body_has_neg",
+    "body_field_count",
+    "is_login",
+    "ip_req_10s",
+    "ip_fail_10s",
+    "ip_fail_ratio_10s",
+    "ip_login_10s",
+    "ip_uniq_ep_10s",
+    "ip_distinct_users_10s",
+    "token_ips_10s",
+    "glob_login_fail_10s",
+    "glob_login_users_10s",
+    "acct_fail_60s",
+    "method_enc",
+    "endpoint_norm_enc"
+  ],
+  "labels": [
+    "api_flooding",
+    "bola",
+    "brute_force",
+    "credential_stuffing",
+    "normal",
+    "parameter_tampering",
+    "sql_injection",
+    "token_replay"
+  ]
+}

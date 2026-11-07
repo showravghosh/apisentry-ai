@@ -1,0 +1,66 @@
+{
+  "F19_with_hour": {
+    "macroF1": 0.9343,
+    "fpr": 0.0261,
+    "attack_recall": 0.9134,
+    "acc": 0.9484,
+    "per_class_f1": {
+      "api_flooding": 0.956,
+      "bola": 0.812,
+      "brute_force": 0.97,
+      "credential_stuffing": 0.921,
+      "normal": 0.957,
+      "parameter_tampering": 0.928,
+      "sql_injection": 0.978,
+      "token_replay": 0.952
+    }
+  },
+  "F18_no_hour": {
+    "macroF1": 0.9303,
+    "fpr": 0.0249,
+    "attack_recall": 0.9059,
+    "acc": 0.946,
+    "per_class_f1": {
+      "api_flooding": 0.955,
+      "bola": 0.78,
+      "brute_force": 0.968,
+      "credential_stuffing": 0.919,
+      "normal": 0.956,
+      "parameter_tampering": 0.926,
+      "sql_injection": 0.979,
+      "token_replay": 0.959
+    }
+  },
+  "F16_no_hour_no_size": {
+    "macroF1": 0.8726,
+    "fpr": 0.0203,
+    "attack_recall": 0.8466,
+    "acc": 0.9247,
+    "per_class_f1": {
+      "api_flooding": 0.936,
+      "bola": 0.786,
+      "brute_force": 0.925,
+      "credential_stuffing": 0.511,
+      "normal": 0.939,
+      "parameter_tampering": 0.938,
+      "sql_injection": 0.989,
+      "token_replay": 0.958
+    }
+  },
+  "F15_no_hour_no_size_no_endpoint": {
+    "macroF1": 0.8692,
+    "fpr": 0.0201,
+    "attack_recall": 0.8378,
+    "acc": 0.9211,
+    "per_class_f1": {
+      "api_flooding": 0.925,
+      "bola": 0.775,
+      "brute_force": 0.923,
+      "credential_stuffing": 0.509,
+      "normal": 0.936,
+      "parameter_tampering": 0.933,
+      "sql_injection": 0.994,
+      "token_replay": 0.959
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "vampi",
+  "login_paths": ["/users/v1/login"],
+  "login_fail_marker": "\"status\": \"fail\"",
+  "object_patterns": ["^/books/v1/([^/]+)$", "^/users/v1/(?!login$|register$|_debug$)([^/]+)$"]
+}

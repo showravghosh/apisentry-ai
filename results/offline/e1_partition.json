@@ -1,0 +1,855 @@
+{
+  "dependence_original_protocol": {
+    "test_requests": 2283,
+    "test_with_any_train_history": 0.7613,
+    "mean_share_of_window_from_train": 0.8027,
+    "by_class_any_train_history": {
+      "api_flooding": 0.978,
+      "bola": 1.0,
+      "brute_force": 0.829,
+      "credential_stuffing": 0.0,
+      "normal": 0.766,
+      "parameter_tampering": 1.0,
+      "sql_injection": 1.0,
+      "token_replay": 0.0
+    }
+  },
+  "protocols": [
+    {
+      "protocol": "stratified_rows",
+      "features": "robust",
+      "rebuild_within_partition": false,
+      "pooled": {
+        "macroF1": 0.9607,
+        "fpr": 0.0204,
+        "attack_recall": 0.9349,
+        "acc": 0.9611
+      },
+      "fold_macroF1_mean": 0.9608,
+      "fold_macroF1_std": 0.0057,
+      "fold_fpr_mean": 0.0204,
+      "per_class": {
+        "api_flooding": {
+          "prec": 0.972,
+          "rec": 0.905,
+          "f1": 0.937,
+          "n": 1605
+        },
+        "bola": {
+          "prec": 0.868,
+          "rec": 0.795,
+          "f1": 0.83,
+          "n": 664
+        },
+        "brute_force": {
+          "prec": 0.997,
+          "rec": 0.994,
+          "f1": 0.995,
+          "n": 617
+        },
+        "credential_stuffing": {
+          "prec": 0.957,
+          "rec": 0.973,
+          "f1": 0.965,
+          "n": 300
+        },
+        "normal": {
+          "prec": 0.956,
+          "rec": 0.98,
+          "f1": 0.967,
+          "n": 6716
+        },
+        "parameter_tampering": {
+          "prec": 0.997,
+          "rec": 0.982,
+          "f1": 0.99,
+          "n": 399
+        },
+        "sql_injection": {
+          "prec": 1.0,
+          "rec": 1.0,
+          "f1": 1.0,
+          "n": 397
+        },
+        "token_replay": {
+          "prec": 1.0,
+          "rec": 1.0,
+          "f1": 1.0,
+          "n": 717
+        }
+      }
+    },
+    {
+      "protocol": "stratified_rows",
+      "features": "robust",
+      "rebuild_within_partition": true,
+      "pooled": {
+        "macroF1": 0.7518,
+        "fpr": 0.0176,
+        "attack_recall": 0.6197,
+        "acc": 0.8323
+      },
+      "fold_macroF1_mean": 0.7511,
+      "fold_macroF1_std": 0.0177,
+      "fold_fpr_mean": 0.0176,
+      "per_class": {
+        "api_flooding": {
+          "prec": 0.993,
+          "rec": 0.624,
+          "f1": 0.767,
+          "n": 1605
+        },
+        "bola": {
+          "prec": 0.851,
+          "rec": 0.19,
+          "f1": 0.31,
+          "n": 664
+        },
+        "brute_force": {
+          "prec": 0.994,
+          "rec": 0.276,
+          "f1": 0.431,
+          "n": 617
+        },
+        "credential_stuffing": {
+          "prec": 0.805,
+          "rec": 0.947,
+          "f1": 0.87,
+          "n": 300
+        },
+        "normal": {
+          "prec": 0.787,
+          "rec": 0.982,
+          "f1": 0.874,
+          "n": 6716
+        },
+        "parameter_tampering": {
+          "prec": 0.933,
+          "rec": 0.805,
+          "f1": 0.864,
+          "n": 399
+        },
+        "sql_injection": {
+          "prec": 1.0,
+          "rec": 0.937,
+          "f1": 0.967,
+          "n": 397
+        },
+        "token_replay": {
+          "prec": 0.992,
+          "rec": 0.876,
+          "f1": 0.93,
+          "n": 717
+        }
+      }
+    },
+    {
+      "protocol": "session_grouped",
+      "features": "robust",
+      "rebuild_within_partition": false,
+      "pooled": {
+        "macroF1": 0.9566,
+        "fpr": 0.0226,
+        "attack_recall": 0.9308,
+        "acc": 0.9582
+      },
+      "fold_macroF1_mean": 0.9567,
+      "fold_macroF1_std": 0.0052,
+      "fold_fpr_mean": 0.0226,
+      "per_class": {
+        "api_flooding": {
+          "prec": 0.968,
+          "rec": 0.906,
+          "f1": 0.936,
+          "n": 1605
+        },
+        "bola": {
+          "prec": 0.86,
+          "rec": 0.777,
+          "f1": 0.816,
+          "n": 664
+        },
+        "brute_force": {
+          "prec": 0.997,
+          "rec": 0.998,
+          "f1": 0.998,
+          "n": 617
+        },
+        "credential_stuffing": {
+          "prec": 0.961,
+          "rec": 0.977,
+          "f1": 0.969,
+          "n": 300
+        },
+        "normal": {
+          "prec": 0.953,
+          "rec": 0.977,
+          "f1": 0.965,
+          "n": 6716
+        },
+        "parameter_tampering": {
+          "prec": 0.984,
+          "rec": 0.955,
+          "f1": 0.969,
+          "n": 399
+        },
+        "sql_injection": {
+          "prec": 1.0,
+          "rec": 1.0,
+          "f1": 1.0,
+          "n": 397
+        },
+        "token_replay": {
+          "prec": 1.0,
+          "rec": 1.0,
+          "f1": 1.0,
+          "n": 717
+        }
+      }
+    },
+    {
+      "protocol": "session_grouped",
+      "features": "robust",
+      "rebuild_within_partition": true,
+      "pooled": {
+        "macroF1": 0.9171,
+        "fpr": 0.0262,
+        "attack_recall": 0.8772,
+        "acc": 0.9337
+      },
+      "fold_macroF1_mean": 0.9171,
+      "fold_macroF1_std": 0.0087,
+      "fold_fpr_mean": 0.0262,
+      "per_class": {
+        "api_flooding": {
+          "prec": 0.967,
+          "rec": 0.906,
+          "f1": 0.936,
+          "n": 1605
+        },
+        "bola": {
+          "prec": 0.859,
+          "rec": 0.718,
+          "f1": 0.783,
+          "n": 664
+        },
+        "brute_force": {
+          "prec": 0.996,
+          "rec": 0.83,
+          "f1": 0.905,
+          "n": 617
+        },
+        "credential_stuffing": {
+          "prec": 0.856,
+          "rec": 0.933,
+          "f1": 0.893,
+          "n": 300
+        },
+        "normal": {
+          "prec": 0.919,
+          "rec": 0.974,
+          "f1": 0.946,
+          "n": 6716
+        },
+        "parameter_tampering": {
+          "prec": 0.989,
+          "rec": 0.865,
+          "f1": 0.922,
+          "n": 399
+        },
+        "sql_injection": {
+          "prec": 1.0,
+          "rec": 0.992,
+          "f1": 0.996,
+          "n": 397
+        },
+        "token_replay": {
+          "prec": 1.0,
+          "rec": 0.915,
+          "f1": 0.956,
+          "n": 717
+        }
+      }
+    },
+    {
+      "protocol": "source_grouped",
+      "features": "robust",
+      "rebuild_within_partition": false,
+      "pooled": {
+        "macroF1": 0.9579,
+        "fpr": 0.0235,
+        "attack_recall": 0.9321,
+        "acc": 0.9582
+      },
+      "fold_macroF1_mean": 0.9579,
+      "fold_macroF1_std": 0.0076,
+      "fold_fpr_mean": 0.0235,
+      "per_class": {
+        "api_flooding": {
+          "prec": 0.964,
+          "rec": 0.903,
+          "f1": 0.933,
+          "n": 1605
+        },
+        "bola": {
+          "prec": 0.858,
+          "rec": 0.785,
+          "f1": 0.82,
+          "n": 664
+        },
+        "brute_force": {
+          "prec": 0.998,
+          "rec": 0.998,
+          "f1": 0.998,
+          "n": 617
+        },
+        "credential_stuffing": {
+          "prec": 0.961,
+          "rec": 0.987,
+          "f1": 0.974,
+          "n": 300
+        },
+        "normal": {
+          "prec": 0.954,
+          "rec": 0.976,
+          "f1": 0.965,
+          "n": 6716
+        },
+        "parameter_tampering": {
+          "prec": 0.987,
+          "rec": 0.96,
+          "f1": 0.973,
+          "n": 399
+        },
+        "sql_injection": {
+          "prec": 1.0,
+          "rec": 1.0,
+          "f1": 1.0,
+          "n": 397
+        },
+        "token_replay": {
+          "prec": 1.0,
+          "rec": 1.0,
+          "f1": 1.0,
+          "n": 717
+        }
+      }
+    },
+    {
+      "protocol": "source_grouped",
+      "features": "robust",
+      "rebuild_within_partition": true,
+      "pooled": {
+        "macroF1": 0.9188,
+        "fpr": 0.0277,
+        "attack_recall": 0.8864,
+        "acc": 0.9366
+      },
+      "fold_macroF1_mean": 0.9188,
+      "fold_macroF1_std": 0.0072,
+      "fold_fpr_mean": 0.0277,
+      "per_class": {
+        "api_flooding": {
+          "prec": 0.971,
+          "rec": 0.905,
+          "f1": 0.936,
+          "n": 1605
+        },
+        "bola": {
+          "prec": 0.864,
+          "rec": 0.745,
+          "f1": 0.8,
+          "n": 664
+        },
+        "brute_force": {
+          "prec": 0.998,
+          "rec": 0.815,
+          "f1": 0.897,
+          "n": 617
+        },
+        "credential_stuffing": {
+          "prec": 0.818,
+          "rec": 0.943,
+          "f1": 0.876,
+          "n": 300
+        },
+        "normal": {
+          "prec": 0.924,
+          "rec": 0.972,
+          "f1": 0.948,
+          "n": 6716
+        },
+        "parameter_tampering": {
+          "prec": 0.988,
+          "rec": 0.847,
+          "f1": 0.912,
+          "n": 399
+        },
+        "sql_injection": {
+          "prec": 1.0,
+          "rec": 0.985,
+          "f1": 0.992,
+          "n": 397
+        },
+        "token_replay": {
+          "prec": 1.0,
+          "rec": 0.975,
+          "f1": 0.987,
+          "n": 717
+        }
+      }
+    },
+    {
+      "protocol": "identity_grouped",
+      "features": "robust",
+      "rebuild_within_partition": true,
+      "pooled": {
+        "macroF1": 0.8869,
+        "fpr": 0.0481,
+        "attack_recall": 0.8623,
+        "acc": 0.9138
+      },
+      "fold_macroF1_mean": 0.9043,
+      "fold_macroF1_std": 0.0063,
+      "fold_fpr_mean": 0.0463,
+      "per_class": {
+        "api_flooding": {
+          "prec": 0.954,
+          "rec": 0.908,
+          "f1": 0.931,
+          "n": 1605
+        },
+        "bola": {
+          "prec": 0.874,
+          "rec": 0.628,
+          "f1": 0.731,
+          "n": 664
+        },
+        "brute_force": {
+          "prec": 0.973,
+          "rec": 0.804,
+          "f1": 0.88,
+          "n": 617
+        },
+        "credential_stuffing": {
+          "prec": 0.864,
+          "rec": 0.953,
+          "f1": 0.906,
+          "n": 300
+        },
+        "normal": {
+          "prec": 0.908,
+          "rec": 0.952,
+          "f1": 0.929,
+          "n": 6716
+        },
+        "parameter_tampering": {
+          "prec": 0.969,
+          "rec": 0.779,
+          "f1": 0.864,
+          "n": 399
+        },
+        "sql_injection": {
+          "prec": 1.0,
+          "rec": 0.889,
+          "f1": 0.941,
+          "n": 397
+        },
+        "token_replay": {
+          "prec": 0.839,
+          "rec": 1.0,
+          "f1": 0.912,
+          "n": 717
+        }
+      }
+    },
+    {
+      "protocol": "stratified_rows",
+      "features": "submitted_set",
+      "rebuild_within_partition": false,
+      "pooled": {
+        "macroF1": 0.9539,
+        "fpr": 0.0205,
+        "attack_recall": 0.9404,
+        "acc": 0.9625
+      },
+      "fold_macroF1_mean": 0.9539,
+      "fold_macroF1_std": 0.0056,
+      "fold_fpr_mean": 0.0205,
+      "per_class": {
+        "api_flooding": {
+          "prec": 0.964,
+          "rec": 0.956,
+          "f1": 0.96,
+          "n": 1605
+        },
+        "bola": {
+          "prec": 0.871,
+          "rec": 0.786,
+          "f1": 0.827,
+          "n": 664
+        },
+        "brute_force": {
+          "prec": 0.985,
+          "rec": 0.963,
+          "f1": 0.974,
+          "n": 617
+        },
+        "credential_stuffing": {
+          "prec": 0.992,
+          "rec": 0.857,
+          "f1": 0.919,
+          "n": 300
+        },
+        "normal": {
+          "prec": 0.959,
+          "rec": 0.979,
+          "f1": 0.969,
+          "n": 6716
+        },
+        "parameter_tampering": {
+          "prec": 0.995,
+          "rec": 0.97,
+          "f1": 0.982,
+          "n": 399
+        },
+        "sql_injection": {
+          "prec": 1.0,
+          "rec": 1.0,
+          "f1": 1.0,
+          "n": 397
+        },
+        "token_replay": {
+          "prec": 1.0,
+          "rec": 1.0,
+          "f1": 1.0,
+          "n": 717
+        }
+      }
+    },
+    {
+      "protocol": "session_grouped",
+      "features": "submitted_set",
+      "rebuild_within_partition": true,
+      "pooled": {
+        "macroF1": 0.9356,
+        "fpr": 0.0256,
+        "attack_recall": 0.9151,
+        "acc": 0.9494
+      },
+      "fold_macroF1_mean": 0.9357,
+      "fold_macroF1_std": 0.0111,
+      "fold_fpr_mean": 0.0256,
+      "per_class": {
+        "api_flooding": {
+          "prec": 0.951,
+          "rec": 0.961,
+          "f1": 0.956,
+          "n": 1605
+        },
+        "bola": {
+          "prec": 0.868,
+          "rec": 0.765,
+          "f1": 0.813,
+          "n": 664
+        },
+        "brute_force": {
+          "prec": 0.974,
+          "rec": 0.964,
+          "f1": 0.969,
+          "n": 617
+        },
+        "credential_stuffing": {
+          "prec": 0.992,
+          "rec": 0.86,
+          "f1": 0.921,
+          "n": 300
+        },
+        "normal": {
+          "prec": 0.943,
+          "rec": 0.974,
+          "f1": 0.958,
+          "n": 6716
+        },
+        "parameter_tampering": {
+          "prec": 0.986,
+          "rec": 0.87,
+          "f1": 0.924,
+          "n": 399
+        },
+        "sql_injection": {
+          "prec": 1.0,
+          "rec": 0.975,
+          "f1": 0.987,
+          "n": 397
+        },
+        "token_replay": {
+          "prec": 1.0,
+          "rec": 0.915,
+          "f1": 0.956,
+          "n": 717
+        }
+      }
+    },
+    {
+      "protocol": "chronological_per_class_sessions",
+      "features": "robust",
+      "rebuild_within_partition": true,
+      "pooled": {
+        "macroF1": 0.9381,
+        "fpr": 0.0464,
+        "attack_recall": 0.9244,
+        "acc": 0.9418
+      },
+      "after_warmup_60s": {
+        "macroF1": 0.9404,
+        "fpr": 0.0494,
+        "attack_recall": 0.9244,
+        "acc": 0.9385
+      },
+      "n_train": 6755,
+      "n_test": 2336,
+      "per_class": {
+        "api_flooding": {
+          "prec": 0.92,
+          "rec": 0.9,
+          "f1": 0.91,
+          "n": 319
+        },
+        "bola": {
+          "prec": 0.754,
+          "rec": 0.789,
+          "f1": 0.771,
+          "n": 128
+        },
+        "brute_force": {
+          "prec": 0.964,
+          "rec": 0.972,
+          "f1": 0.968,
+          "n": 109
+        },
+        "credential_stuffing": {
+          "prec": 0.982,
+          "rec": 0.9,
+          "f1": 0.939,
+          "n": 60
+        },
+        "normal": {
+          "prec": 0.952,
+          "rec": 0.954,
+          "f1": 0.953,
+          "n": 1423
+        },
+        "parameter_tampering": {
+          "prec": 0.95,
+          "rec": 1.0,
+          "f1": 0.974,
+          "n": 76
+        },
+        "sql_injection": {
+          "prec": 1.0,
+          "rec": 0.987,
+          "f1": 0.994,
+          "n": 78
+        },
+        "token_replay": {
+          "prec": 1.0,
+          "rec": 0.993,
+          "f1": 0.996,
+          "n": 143
+        }
+      }
+    },
+    {
+      "protocol": "chronological_per_class_sessions",
+      "features": "submitted_set",
+      "rebuild_within_partition": true,
+      "pooled": {
+        "macroF1": 0.9348,
+        "fpr": 0.0576,
+        "attack_recall": 0.9518,
+        "acc": 0.9448
+      },
+      "after_warmup_60s": {
+        "macroF1": 0.9377,
+        "fpr": 0.0616,
+        "attack_recall": 0.9518,
+        "acc": 0.9429
+      },
+      "n_train": 6755,
+      "n_test": 2336,
+      "per_class": {
+        "api_flooding": {
+          "prec": 0.901,
+          "rec": 0.972,
+          "f1": 0.935,
+          "n": 319
+        },
+        "bola": {
+          "prec": 0.754,
+          "rec": 0.789,
+          "f1": 0.771,
+          "n": 128
+        },
+        "brute_force": {
+          "prec": 0.929,
+          "rec": 0.963,
+          "f1": 0.946,
+          "n": 109
+        },
+        "credential_stuffing": {
+          "prec": 0.9,
+          "rec": 0.9,
+          "f1": 0.9,
+          "n": 60
+        },
+        "normal": {
+          "prec": 0.968,
+          "rec": 0.942,
+          "f1": 0.955,
+          "n": 1423
+        },
+        "parameter_tampering": {
+          "prec": 1.0,
+          "rec": 1.0,
+          "f1": 1.0,
+          "n": 76
+        },
+        "sql_injection": {
+          "prec": 0.951,
+          "rec": 1.0,
+          "f1": 0.975,
+          "n": 78
+        },
+        "token_replay": {
+          "prec": 1.0,
+          "rec": 0.993,
+          "f1": 0.996,
+          "n": 143
+        }
+      }
+    },
+    {
+      "protocol": "leave_one_principal_out",
+      "test_principal": "alice",
+      "rebuild_within_partition": true,
+      "pooled": {
+        "macroF1": 0.9118,
+        "fpr": 0.0712,
+        "attack_recall": 0.889,
+        "acc": 0.907
+      },
+      "per_class": {
+        "api_flooding": {
+          "prec": 1.0,
+          "rec": 0.886,
+          "f1": 0.939,
+          "n": 804
+        },
+        "bola": {
+          "prec": 0.85,
+          "rec": 0.713,
+          "f1": 0.776,
+          "n": 342
+        },
+        "brute_force": {
+          "prec": 1.0,
+          "rec": 0.968,
+          "f1": 0.983,
+          "n": 308
+        },
+        "credential_stuffing": {
+          "prec": 0.993,
+          "rec": 0.907,
+          "f1": 0.948,
+          "n": 150
+        },
+        "normal": {
+          "prec": 0.877,
+          "rec": 0.929,
+          "f1": 0.902,
+          "n": 1966
+        },
+        "parameter_tampering": {
+          "prec": 0.994,
+          "rec": 0.826,
+          "f1": 0.902,
+          "n": 190
+        },
+        "sql_injection": {
+          "prec": 1.0,
+          "rec": 0.904,
+          "f1": 0.949,
+          "n": 114
+        },
+        "token_replay": {
+          "prec": 0.809,
+          "rec": 1.0,
+          "f1": 0.895,
+          "n": 407
+        }
+      }
+    },
+    {
+      "protocol": "leave_one_principal_out",
+      "test_principal": "bob",
+      "rebuild_within_partition": true,
+      "pooled": {
+        "macroF1": 0.6432,
+        "fpr": 0.5688,
+        "attack_recall": 0.9295,
+        "acc": 0.5754
+      },
+      "per_class": {
+        "api_flooding": {
+          "prec": 0.341,
+          "rec": 1.0,
+          "f1": 0.508,
+          "n": 801
+        },
+        "bola": {
+          "prec": 0.816,
+          "rec": 0.578,
+          "f1": 0.676,
+          "n": 322
+        },
+        "brute_force": {
+          "prec": 0.255,
+          "rec": 1.0,
+          "f1": 0.407,
+          "n": 309
+        },
+        "credential_stuffing": {
+          "prec": 0.293,
+          "rec": 0.993,
+          "f1": 0.453,
+          "n": 150
+        },
+        "normal": {
+          "prec": 0.924,
+          "rec": 0.431,
+          "f1": 0.588,
+          "n": 4750
+        },
+        "parameter_tampering": {
+          "prec": 0.954,
+          "rec": 0.89,
+          "f1": 0.921,
+          "n": 209
+        },
+        "sql_injection": {
+          "prec": 1.0,
+          "rec": 0.431,
+          "f1": 0.602,
+          "n": 283
+        },
+        "token_replay": {
+          "prec": 1.0,
+          "rec": 0.981,
+          "f1": 0.99,
+          "n": 310
+        }
+      }
+    }
+  ]
+}

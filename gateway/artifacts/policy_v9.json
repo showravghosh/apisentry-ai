@@ -1,0 +1,80 @@
+{
+  "tau_r": 0.75,
+  "tau_b": 0.99,
+  "sig": {
+    "sql_injection": [
+      [
+        "body_sql_hits",
+        1
+      ]
+    ],
+    "parameter_tampering": [
+      [
+        "body_has_neg",
+        1
+      ],
+      [
+        "body_max_num",
+        100
+      ]
+    ],
+    "bola": [
+      [
+        "id_distinct_objects_10s",
+        8
+      ]
+    ],
+    "brute_force": [
+      [
+        "ip_fail_10s",
+        3
+      ],
+      [
+        "acct_fail_60s",
+        3
+      ]
+    ],
+    "credential_stuffing": [
+      [
+        "glob_login_users_10s",
+        2
+      ]
+    ],
+    "token_replay": [
+      [
+        "token_ips_10s",
+        2
+      ],
+      [
+        "token_ips_60s",
+        3
+      ]
+    ],
+    "api_flooding": [
+      [
+        "ip_req_10s",
+        8
+      ],
+      [
+        "ip_req_60s",
+        20
+      ]
+    ]
+  },
+  "sql_hard": 3,
+  "bola_hard": 7,
+  "rate_limit": {
+    "rate_per_sec": 10,
+    "burst": 20
+  },
+  "flood_min_req_10s": 10,
+  "flood_throttle_only": true,
+  "tamper_hard": true,
+  "login_fail_60s": 3,
+  "objects_60s": 12,
+  "src_req_60s": 30,
+  "flood_identity_auth": true,
+  "bucket_identity_auth": true,
+  "bola_min_objects": 2,
+  "path_sql_hard": 3
+}

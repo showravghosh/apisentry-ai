@@ -4,12 +4,20 @@
     "POST"
   ],
   "endpoint_norm": [
+    "/",
+    "/HNAP1",
     "/cart",
     "/cart/add",
+    "/evox/about",
     "/login",
+    "/nmaplowercheck1786986594",
+    "/nmaplowercheck1786986638",
+    "/nmaplowercheck1786986686",
+    "/nmaplowercheck1786986710",
     "/order",
     "/products",
     "/products/{id}",
+    "/sdk",
     "/search",
     "/users/{id}"
   ]

@@ -1,0 +1,58 @@
+[
+  {
+    "concurrency": 1,
+    "requests": 13311,
+    "rps": 887.4,
+    "p50_ms": 1.03,
+    "p95_ms": 1.44,
+    "p99_ms": 1.93,
+    "mean_ms": 1.08,
+    "errors": 0,
+    "blocked_or_limited": 0,
+    "cpu_percent": 35.7,
+    "rss_mb_start": 47.9,
+    "rss_mb_end": 49.1
+  },
+  {
+    "concurrency": 8,
+    "requests": 19142,
+    "rps": 1276.1,
+    "p50_ms": 4.43,
+    "p95_ms": 9.09,
+    "p99_ms": 55.35,
+    "mean_ms": 6.26,
+    "errors": 0,
+    "blocked_or_limited": 0,
+    "cpu_percent": 46.1,
+    "rss_mb_start": 49.1,
+    "rss_mb_end": 49.2
+  },
+  {
+    "concurrency": 32,
+    "requests": 11338,
+    "rps": 755.9,
+    "p50_ms": 29.19,
+    "p95_ms": 121.63,
+    "p99_ms": 201.22,
+    "mean_ms": 42.33,
+    "errors": 0,
+    "blocked_or_limited": 0,
+    "cpu_percent": 28.9,
+    "rss_mb_start": 49.2,
+    "rss_mb_end": 49.4
+  },
+  {
+    "concurrency": 64,
+    "requests": 6806,
+    "rps": 453.7,
+    "p50_ms": 78.98,
+    "p95_ms": 501.94,
+    "p99_ms": 918.04,
+    "mean_ms": 141.11,
+    "errors": 0,
+    "blocked_or_limited": 0,
+    "cpu_percent": 18.1,
+    "rss_mb_start": 49.4,
+    "rss_mb_end": 49.8
+  }
+]

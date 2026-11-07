@@ -1,0 +1,472 @@
+{
+  "pace": {
+    "flood_medium": 0.45,
+    "flood_slow": 1.4,
+    "brute_slow": 5.5,
+    "bola_slow": 2.8,
+    "replay_slow": 3.8
+  },
+  "seed": 10201,
+  "results": {
+    "ModSecurity_CRS": {
+      "sqli_standard": {
+        "enforced": 20,
+        "n": 20,
+        "n403": 20,
+        "n429": 0
+      },
+      "sqli_evasive": {
+        "enforced": 14,
+        "n": 15,
+        "n403": 14,
+        "n429": 0
+      },
+      "tamper_standard": {
+        "enforced": 0,
+        "n": 12,
+        "n403": 0,
+        "n429": 0
+      },
+      "tamper_evasive": {
+        "enforced": 0,
+        "n": 12,
+        "n403": 0,
+        "n429": 0
+      },
+      "flood_burst": {
+        "enforced": 0,
+        "n": 40,
+        "n403": 0,
+        "n429": 0
+      },
+      "flood_medium": {
+        "enforced": 0,
+        "n": 40,
+        "n403": 0,
+        "n429": 0
+      },
+      "flood_slow": {
+        "enforced": 0,
+        "n": 30,
+        "n403": 0,
+        "n429": 0
+      },
+      "brute_fast": {
+        "enforced": 0,
+        "n": 20,
+        "n403": 0,
+        "n429": 0
+      },
+      "brute_slow": {
+        "enforced": 0,
+        "n": 20,
+        "n403": 0,
+        "n429": 0
+      },
+      "credstuff_distributed": {
+        "enforced": 0,
+        "n": 30,
+        "n403": 0,
+        "n429": 0
+      },
+      "bola_fast": {
+        "enforced": 0,
+        "n": 20,
+        "n403": 0,
+        "n429": 0
+      },
+      "bola_slow": {
+        "enforced": 0,
+        "n": 20,
+        "n403": 0,
+        "n429": 0
+      },
+      "replay_12_ips": {
+        "enforced": 0,
+        "n": 12,
+        "n403": 0,
+        "n429": 0
+      },
+      "replay_4_ips_slow": {
+        "enforced": 0,
+        "n": 4,
+        "n403": 0,
+        "n429": 0
+      },
+      "benign_control": {
+        "enforced": 0,
+        "n": 60,
+        "n403": 0,
+        "n429": 0
+      }
+    },
+    "RateLimit_baseline": {
+      "sqli_standard": {
+        "enforced": 0,
+        "n": 20,
+        "n403": 0,
+        "n429": 0
+      },
+      "sqli_evasive": {
+        "enforced": 0,
+        "n": 15,
+        "n403": 0,
+        "n429": 0
+      },
+      "tamper_standard": {
+        "enforced": 0,
+        "n": 12,
+        "n403": 0,
+        "n429": 0
+      },
+      "tamper_evasive": {
+        "enforced": 0,
+        "n": 12,
+        "n403": 0,
+        "n429": 0
+      },
+      "flood_burst": {
+        "enforced": 15,
+        "n": 40,
+        "n403": 0,
+        "n429": 15
+      },
+      "flood_medium": {
+        "enforced": 0,
+        "n": 40,
+        "n403": 0,
+        "n429": 0
+      },
+      "flood_slow": {
+        "enforced": 0,
+        "n": 30,
+        "n403": 0,
+        "n429": 0
+      },
+      "brute_fast": {
+        "enforced": 15,
+        "n": 20,
+        "n403": 0,
+        "n429": 15
+      },
+      "brute_slow": {
+        "enforced": 10,
+        "n": 20,
+        "n403": 0,
+        "n429": 10
+      },
+      "credstuff_distributed": {
+        "enforced": 0,
+        "n": 30,
+        "n403": 0,
+        "n429": 0
+      },
+      "bola_fast": {
+        "enforced": 0,
+        "n": 20,
+        "n403": 0,
+        "n429": 0
+      },
+      "bola_slow": {
+        "enforced": 0,
+        "n": 20,
+        "n403": 0,
+        "n429": 0
+      },
+      "replay_12_ips": {
+        "enforced": 0,
+        "n": 12,
+        "n403": 0,
+        "n429": 0
+      },
+      "replay_4_ips_slow": {
+        "enforced": 0,
+        "n": 4,
+        "n403": 0,
+        "n429": 0
+      },
+      "benign_control": {
+        "enforced": 0,
+        "n": 60,
+        "n403": 0,
+        "n429": 0
+      }
+    },
+    "APISentry_original_fresh": {
+      "sqli_standard": {
+        "enforced": 20,
+        "n": 20,
+        "n403": 20,
+        "n429": 0
+      },
+      "sqli_evasive": {
+        "enforced": 15,
+        "n": 15,
+        "n403": 15,
+        "n429": 0
+      },
+      "tamper_standard": {
+        "enforced": 10,
+        "n": 12,
+        "n403": 10,
+        "n429": 0
+      },
+      "tamper_evasive": {
+        "enforced": 10,
+        "n": 12,
+        "n403": 10,
+        "n429": 0
+      },
+      "flood_burst": {
+        "enforced": 33,
+        "n": 40,
+        "n403": 33,
+        "n429": 0
+      },
+      "flood_medium": {
+        "enforced": 33,
+        "n": 40,
+        "n403": 33,
+        "n429": 0
+      },
+      "flood_slow": {
+        "enforced": 1,
+        "n": 30,
+        "n403": 1,
+        "n429": 0
+      },
+      "brute_fast": {
+        "enforced": 17,
+        "n": 20,
+        "n403": 17,
+        "n429": 0
+      },
+      "brute_slow": {
+        "enforced": 0,
+        "n": 20,
+        "n403": 0,
+        "n429": 0
+      },
+      "credstuff_distributed": {
+        "enforced": 0,
+        "n": 30,
+        "n403": 0,
+        "n429": 0
+      },
+      "bola_fast": {
+        "enforced": 16,
+        "n": 20,
+        "n403": 16,
+        "n429": 0
+      },
+      "bola_slow": {
+        "enforced": 0,
+        "n": 20,
+        "n403": 0,
+        "n429": 0
+      },
+      "replay_12_ips": {
+        "enforced": 10,
+        "n": 12,
+        "n403": 10,
+        "n429": 0
+      },
+      "replay_4_ips_slow": {
+        "enforced": 2,
+        "n": 4,
+        "n403": 2,
+        "n429": 0
+      },
+      "benign_control": {
+        "enforced": 0,
+        "n": 60,
+        "n403": 0,
+        "n429": 0
+      }
+    },
+    "APISentry_v8": {
+      "sqli_standard": {
+        "enforced": 20,
+        "n": 20,
+        "n403": 20,
+        "n429": 0
+      },
+      "sqli_evasive": {
+        "enforced": 15,
+        "n": 15,
+        "n403": 15,
+        "n429": 0
+      },
+      "tamper_standard": {
+        "enforced": 12,
+        "n": 12,
+        "n403": 12,
+        "n429": 0
+      },
+      "tamper_evasive": {
+        "enforced": 6,
+        "n": 12,
+        "n403": 6,
+        "n429": 0
+      },
+      "flood_burst": {
+        "enforced": 31,
+        "n": 40,
+        "n403": 0,
+        "n429": 31
+      },
+      "flood_medium": {
+        "enforced": 31,
+        "n": 40,
+        "n403": 0,
+        "n429": 31
+      },
+      "flood_slow": {
+        "enforced": 1,
+        "n": 30,
+        "n403": 0,
+        "n429": 1
+      },
+      "brute_fast": {
+        "enforced": 17,
+        "n": 20,
+        "n403": 10,
+        "n429": 7
+      },
+      "brute_slow": {
+        "enforced": 17,
+        "n": 20,
+        "n403": 0,
+        "n429": 17
+      },
+      "credstuff_distributed": {
+        "enforced": 24,
+        "n": 30,
+        "n403": 0,
+        "n429": 24
+      },
+      "bola_fast": {
+        "enforced": 14,
+        "n": 20,
+        "n403": 14,
+        "n429": 0
+      },
+      "bola_slow": {
+        "enforced": 9,
+        "n": 20,
+        "n403": 9,
+        "n429": 0
+      },
+      "replay_12_ips": {
+        "enforced": 7,
+        "n": 12,
+        "n403": 6,
+        "n429": 1
+      },
+      "replay_4_ips_slow": {
+        "enforced": 0,
+        "n": 4,
+        "n403": 0,
+        "n429": 0
+      },
+      "benign_control": {
+        "enforced": 0,
+        "n": 60,
+        "n403": 0,
+        "n429": 0
+      }
+    },
+    "APISentry_v9": {
+      "sqli_standard": {
+        "enforced": 20,
+        "n": 20,
+        "n403": 20,
+        "n429": 0
+      },
+      "sqli_evasive": {
+        "enforced": 15,
+        "n": 15,
+        "n403": 15,
+        "n429": 0
+      },
+      "tamper_standard": {
+        "enforced": 12,
+        "n": 12,
+        "n403": 12,
+        "n429": 0
+      },
+      "tamper_evasive": {
+        "enforced": 6,
+        "n": 12,
+        "n403": 6,
+        "n429": 0
+      },
+      "flood_burst": {
+        "enforced": 31,
+        "n": 40,
+        "n403": 0,
+        "n429": 31
+      },
+      "flood_medium": {
+        "enforced": 31,
+        "n": 40,
+        "n403": 0,
+        "n429": 31
+      },
+      "flood_slow": {
+        "enforced": 1,
+        "n": 30,
+        "n403": 0,
+        "n429": 1
+      },
+      "brute_fast": {
+        "enforced": 17,
+        "n": 20,
+        "n403": 10,
+        "n429": 7
+      },
+      "brute_slow": {
+        "enforced": 17,
+        "n": 20,
+        "n403": 0,
+        "n429": 17
+      },
+      "credstuff_distributed": {
+        "enforced": 24,
+        "n": 30,
+        "n403": 0,
+        "n429": 24
+      },
+      "bola_fast": {
+        "enforced": 14,
+        "n": 20,
+        "n403": 14,
+        "n429": 0
+      },
+      "bola_slow": {
+        "enforced": 9,
+        "n": 20,
+        "n403": 9,
+        "n429": 0
+      },
+      "replay_12_ips": {
+        "enforced": 7,
+        "n": 12,
+        "n403": 6,
+        "n429": 1
+      },
+      "replay_4_ips_slow": {
+        "enforced": 0,
+        "n": 4,
+        "n403": 0,
+        "n429": 0
+      },
+      "benign_control": {
+        "enforced": 0,
+        "n": 60,
+        "n403": 0,
+        "n429": 0
+      }
+    }
+  }
+}

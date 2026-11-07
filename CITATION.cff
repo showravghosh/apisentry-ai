@@ -1,13 +1,13 @@
 cff-version: 1.2.0
 message: "If you use this software or dataset, please cite it as below."
-title: "APIShield: A Real-Time Hybrid Machine Learning Gateway for Detecting Behavioural and Payload-Based API Attacks"
+title: "APISentry: A Real-Time Hybrid Machine Learning Gateway for Detecting Behavioural and Payload-Based API Attacks"
 authors:
   - family-names: Ghosh
     given-names: Showrav
     orcid: "https://orcid.org/0009-0008-6639-9698"
 type: software
-version: "v1.0.0"
-date-released: "2026-08-28"
+version: "v2.0.0"
+date-released: "2026-11-07"
 license: MIT
 repository-code: "https://github.com/showravghosh/apisentry-ai"
 url: "https://github.com/showravghosh/apisentry-ai"

@@ -1,0 +1,152 @@
+{
+  "tamper_rule_on_full_corpus": {
+    "v6": {
+      "api_flooding": 0,
+      "bola": 0,
+      "brute_force": 0,
+      "credential_stuffing": 0,
+      "normal": 0,
+      "parameter_tampering": 197,
+      "sql_injection": 0,
+      "token_replay": 0
+    },
+    "v7": {
+      "api_flooding": 0,
+      "bola": 0,
+      "brute_force": 0,
+      "credential_stuffing": 0,
+      "normal": 0,
+      "parameter_tampering": 197,
+      "sql_injection": 0,
+      "token_replay": 0
+    }
+  },
+  "fold_long_rule_values": [
+    {
+      "login_fail_60s": 3,
+      "objects_60s": 12,
+      "src_req_60s": 30
+    },
+    {
+      "login_fail_60s": 3,
+      "objects_60s": 12,
+      "src_req_60s": 30
+    },
+    {
+      "login_fail_60s": 2,
+      "objects_60s": 8,
+      "src_req_60s": 20
+    },
+    {
+      "login_fail_60s": 3,
+      "objects_60s": 12,
+      "src_req_60s": 30
+    },
+    {
+      "login_fail_60s": 3,
+      "objects_60s": 12,
+      "src_req_60s": 30
+    }
+  ],
+  "v6": {
+    "benign_blocked_n": 0,
+    "benign_throttled_n": 77,
+    "n_benign": 6716,
+    "attack_enforced": 0.8383,
+    "attack_blocked": 0.4273,
+    "per_attack_enforced": {
+      "api_flooding": 0.776,
+      "bola": 0.715,
+      "brute_force": 0.887,
+      "credential_stuffing": 0.88,
+      "parameter_tampering": 0.857,
+      "sql_injection": 0.992,
+      "token_replay": 0.937
+    },
+    "ci_hard_block": {
+      "benign_flag_rate": {
+        "point": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "attack_enforce_rate": {
+        "point": 0.4273,
+        "ci95": [
+          0.3757,
+          0.4864
+        ]
+      }
+    },
+    "ci_any_enforcement": {
+      "benign_flag_rate": {
+        "point": 0.0115,
+        "ci95": [
+          0.008,
+          0.0154
+        ]
+      },
+      "attack_enforce_rate": {
+        "point": 0.8383,
+        "ci95": [
+          0.8247,
+          0.8519
+        ]
+      }
+    }
+  },
+  "v7": {
+    "benign_blocked_n": 3,
+    "benign_throttled_n": 103,
+    "n_benign": 6716,
+    "attack_enforced": 0.8387,
+    "attack_blocked": 0.4273,
+    "per_attack_enforced": {
+      "api_flooding": 0.776,
+      "bola": 0.715,
+      "brute_force": 0.89,
+      "credential_stuffing": 0.88,
+      "parameter_tampering": 0.857,
+      "sql_injection": 0.992,
+      "token_replay": 0.937
+    },
+    "ci_hard_block": {
+      "benign_flag_rate": {
+        "point": 0.0004,
+        "ci95": [
+          0.0,
+          0.0013
+        ]
+      },
+      "attack_enforce_rate": {
+        "point": 0.4273,
+        "ci95": [
+          0.3757,
+          0.4864
+        ]
+      }
+    },
+    "ci_any_enforcement": {
+      "benign_flag_rate": {
+        "point": 0.0158,
+        "ci95": [
+          0.008,
+          0.0283
+        ]
+      },
+      "attack_enforce_rate": {
+        "point": 0.8387,
+        "ci95": [
+          0.825,
+          0.8523
+        ]
+      }
+    }
+  },
+  "deploy_long_rule_values": {
+    "login_fail_60s": 3,
+    "objects_60s": 12,
+    "src_req_60s": 30
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "F19_robust_acct": {
+    "macroF1": 0.9159,
+    "fpr": 0.0268,
+    "attack_recall": 0.8757,
+    "acc": 0.9327,
+    "per_class_f1": {
+      "api_flooding": 0.935,
+      "bola": 0.786,
+      "brute_force": 0.899,
+      "credential_stuffing": 0.896,
+      "normal": 0.945,
+      "parameter_tampering": 0.924,
+      "sql_injection": 0.989,
+      "token_replay": 0.954
+    }
+  }
+}

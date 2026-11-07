@@ -1,0 +1,13 @@
+APISentry gateway, frozen configuration v9 (final)
+Frozen: 2026-11-04, before any Kali test with seeds 10001-10005 (coverage), 10101-10105 (regimes), 10201 (evasion, pace 0.45/1.4/5.5/2.8/3.8), 10301-10303 (VAmPI), relay seed 10401, tool suite with browser User-Agent.
+
+Policy: APISENTRY_POLICY=v9 (gateway/artifacts/policy_v9.json). Model and all 19 features unchanged since v7.
+
+v9 = v8 plus one hard evidence rule: the URL path is normalised exactly like the payload (up to three rounds of URL decoding, lower-casing, removal of SQL comments, whitespace collapse) and its SQL-keyword count is compared with path_sql_hard = 3, the same validated threshold as the body/query SQL rule. Reason: on VAmPI (v8 Kali run, seeds 9xxx) sqlmap placed injections in the URL path, which the payload features do not read; v8 stopped them through the BOLA-like rule only.
+Value choice: all 11,415 request paths of the dataset contain zero SQL keywords, so no value can be selected from the corpus; the existing SQL threshold is reused instead of tuning a new one. Offline, the rule fires on no request, so v9 offline equals v8 and v7.
+
+Development checks (cloud, development seeds, not reported as results): coverage original 865/1000, extended 1773/2000, benign 0 blocked and 0 rate-limited; regimes unchanged from v8 (shared proxy 0/300); evasion unchanged; VAmPI legit 0 blocked (dev seed 3001); VAmPI sqlmap with profile now blocked mainly by the SQL rule (1,633 of the path blocks), without profile 60/84 enforced (45 by the SQL rule; v8 16/46); original-API tool results unchanged.
+
+Previous frozen configuration v8 is included as previous_v8/ for comparison. Baselines: ModSecurity CRS PL1 (8081), rate limiter (9008/9118), APISentry-SIG without state reset (9000) and with reset hook (9006/9116). Tools go through experiments/tools/tool_relay_ua.py (one browser User-Agent for every tool) and tools_suite_ua.py (hydra success condition on the token).
+
+SHA-256: kali_run/FROZEN_SHA256_V9.txt (made by kali_run/make_freeze_v9.sh).

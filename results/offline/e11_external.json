@@ -1,0 +1,94 @@
+{
+  "csic": {
+    "n": 61065,
+    "n_attack": 25065,
+    "split": [
+      36639,
+      12213,
+      12213
+    ],
+    "gateway_payload_features_catboost": {
+      "val_F1": 0.5722,
+      "test_F1": 0.5638,
+      "test_F1_ci95": [
+        0.5513,
+        0.5769
+      ],
+      "test_acc": 0.7224,
+      "test_prec": 0.7941,
+      "test_rec": 0.4371,
+      "test_fpr": 0.0789,
+      "test_AUC": 0.7575
+    },
+    "sql_rule_only_h3": {
+      "fires_on_normal_rate": 0.0001,
+      "fires_on_attack_rate": 0.0931
+    },
+    "gateway_payload_features_catboost_with_path": {
+      "test_F1": 0.6937,
+      "test_AUC": 0.8709,
+      "test_acc": 0.7869
+    },
+    "reference_char_tfidf_logreg": {
+      "val_F1": 0.9623,
+      "test_F1": 0.9683,
+      "test_F1_ci95": [
+        0.9646,
+        0.9715
+      ],
+      "test_acc": 0.974,
+      "test_AUC": 0.9949,
+      "note": "vectoriser fitted on the training partition only"
+    },
+    "gateway_payload_features_cv5_F1": {
+      "mean": 0.5788,
+      "std": 0.0037
+    }
+  },
+  "ecml": {
+    "n": 50116,
+    "classes": {
+      "Valid": 35006,
+      "OsCommanding": 2302,
+      "PathTransversal": 2295,
+      "XPathInjection": 2279,
+      "LdapInjection": 2279,
+      "SqlInjection": 2274,
+      "SSI": 1856,
+      "XSS": 1825
+    },
+    "split": [
+      30069,
+      10023,
+      10024
+    ],
+    "gateway_payload_features_catboost": {
+      "val_macroF1": 0.4296,
+      "test_macroF1": 0.4489,
+      "test_macroF1_ci95": [
+        0.4339,
+        0.4638
+      ],
+      "test_acc": 0.7802,
+      "per_class_f1": {
+        "LdapInjection": 0.58,
+        "OsCommanding": 0.111,
+        "PathTransversal": 0.078,
+        "SSI": 0.451,
+        "SqlInjection": 0.456,
+        "Valid": 0.887,
+        "XPathInjection": 0.697,
+        "XSS": 0.332
+      }
+    },
+    "reference_char_tfidf_logreg": {
+      "test_macroF1": 0.8636,
+      "test_macroF1_ci95": [
+        0.8546,
+        0.8728
+      ],
+      "test_acc": 0.9177,
+      "note": "vectoriser fitted on the training partition only"
+    }
+  }
+}

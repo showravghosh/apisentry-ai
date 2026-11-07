@@ -1,0 +1,999 @@
+{
+  "policy": {
+    "tau_r": 0.75,
+    "tau_b": 0.99,
+    "sig": {
+      "sql_injection": [
+        [
+          "body_sql_hits",
+          1
+        ]
+      ],
+      "parameter_tampering": [
+        [
+          "body_has_neg",
+          1
+        ],
+        [
+          "body_max_num",
+          100
+        ]
+      ],
+      "bola": [
+        [
+          "id_distinct_objects_10s",
+          8
+        ]
+      ],
+      "brute_force": [
+        [
+          "ip_fail_10s",
+          3
+        ],
+        [
+          "acct_fail_60s",
+          3
+        ]
+      ],
+      "credential_stuffing": [
+        [
+          "glob_login_users_10s",
+          2
+        ]
+      ],
+      "token_replay": [
+        [
+          "token_ips_10s",
+          2
+        ],
+        [
+          "token_ips_60s",
+          3
+        ]
+      ],
+      "api_flooding": [
+        [
+          "ip_req_10s",
+          8
+        ],
+        [
+          "ip_req_60s",
+          20
+        ]
+      ]
+    },
+    "sql_hard": 3,
+    "bola_hard": 7,
+    "rate_limit": {
+      "rate_per_sec": 10,
+      "burst": 20
+    },
+    "flood_min_req_10s": 10,
+    "flood_throttle_only": true,
+    "tamper_hard": true,
+    "login_fail_60s": 3,
+    "objects_60s": 12,
+    "src_req_60s": 30,
+    "flood_identity_auth": true,
+    "bucket_identity_auth": true,
+    "bola_min_objects": 2
+  },
+  "nested_selected": [
+    {
+      "login_fail_60s": 3,
+      "objects_60s": 12,
+      "src_req_60s": 30
+    },
+    {
+      "login_fail_60s": 3,
+      "objects_60s": 12,
+      "src_req_60s": 30
+    },
+    {
+      "login_fail_60s": 2,
+      "objects_60s": 8,
+      "src_req_60s": 20
+    },
+    {
+      "login_fail_60s": 3,
+      "objects_60s": 12,
+      "src_req_60s": 30
+    },
+    {
+      "login_fail_60s": 3,
+      "objects_60s": 12,
+      "src_req_60s": 30
+    }
+  ],
+  "note": "deployed values applied to every outer test fold; nested_full uses fold-selected long-window values",
+  "stages": {
+    "classifier_stage": {
+      "benign_blocked_n": 0,
+      "benign_throttled_n": 100,
+      "n_benign": 6716,
+      "attack_enforced": 0.8659,
+      "attack_blocked": 0.6265,
+      "per_attack_enforced": {
+        "api_flooding": 0.881,
+        "bola": 0.715,
+        "brute_force": 0.887,
+        "credential_stuffing": 0.88,
+        "parameter_tampering": 0.789,
+        "sql_injection": 0.962,
+        "token_replay": 0.937
+      },
+      "ci_hard_block": {
+        "benign_flag_rate": {
+          "point": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.6265,
+          "ci95": [
+            0.5918,
+            0.6586
+          ]
+        }
+      },
+      "ci_any_enforcement": {
+        "benign_flag_rate": {
+          "point": 0.0149,
+          "ci95": [
+            0.0098,
+            0.0215
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.8659,
+          "ci95": [
+            0.854,
+            0.8772
+          ]
+        }
+      }
+    },
+    "+sql_rule": {
+      "benign_blocked_n": 0,
+      "benign_throttled_n": 100,
+      "n_benign": 6716,
+      "attack_enforced": 0.8685,
+      "attack_blocked": 0.6535,
+      "per_attack_enforced": {
+        "api_flooding": 0.881,
+        "bola": 0.715,
+        "brute_force": 0.887,
+        "credential_stuffing": 0.88,
+        "parameter_tampering": 0.789,
+        "sql_injection": 0.992,
+        "token_replay": 0.937
+      },
+      "ci_hard_block": {
+        "benign_flag_rate": {
+          "point": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.6535,
+          "ci95": [
+            0.6207,
+            0.6838
+          ]
+        }
+      },
+      "ci_any_enforcement": {
+        "benign_flag_rate": {
+          "point": 0.0149,
+          "ci95": [
+            0.0098,
+            0.0215
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.8685,
+          "ci95": [
+            0.8566,
+            0.8796
+          ]
+        }
+      }
+    },
+    "+bola_10s_rule": {
+      "benign_blocked_n": 0,
+      "benign_throttled_n": 100,
+      "n_benign": 6716,
+      "attack_enforced": 0.8685,
+      "attack_blocked": 0.6701,
+      "per_attack_enforced": {
+        "api_flooding": 0.881,
+        "bola": 0.715,
+        "brute_force": 0.887,
+        "credential_stuffing": 0.88,
+        "parameter_tampering": 0.789,
+        "sql_injection": 0.992,
+        "token_replay": 0.937
+      },
+      "ci_hard_block": {
+        "benign_flag_rate": {
+          "point": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.6701,
+          "ci95": [
+            0.6398,
+            0.6987
+          ]
+        }
+      },
+      "ci_any_enforcement": {
+        "benign_flag_rate": {
+          "point": 0.0149,
+          "ci95": [
+            0.0098,
+            0.0215
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.8685,
+          "ci95": [
+            0.8566,
+            0.8796
+          ]
+        }
+      }
+    },
+    "+tamper_rule": {
+      "benign_blocked_n": 0,
+      "benign_throttled_n": 100,
+      "n_benign": 6716,
+      "attack_enforced": 0.8742,
+      "attack_blocked": 0.7093,
+      "per_attack_enforced": {
+        "api_flooding": 0.881,
+        "bola": 0.715,
+        "brute_force": 0.887,
+        "credential_stuffing": 0.88,
+        "parameter_tampering": 0.857,
+        "sql_injection": 0.992,
+        "token_replay": 0.937
+      },
+      "ci_hard_block": {
+        "benign_flag_rate": {
+          "point": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.7093,
+          "ci95": [
+            0.6833,
+            0.7319
+          ]
+        }
+      },
+      "ci_any_enforcement": {
+        "benign_flag_rate": {
+          "point": 0.0149,
+          "ci95": [
+            0.0098,
+            0.0215
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.8742,
+          "ci95": [
+            0.8629,
+            0.8848
+          ]
+        }
+      }
+    },
+    "+flood_floor_throttle": {
+      "benign_blocked_n": 0,
+      "benign_throttled_n": 77,
+      "n_benign": 6716,
+      "attack_enforced": 0.8383,
+      "attack_blocked": 0.4273,
+      "per_attack_enforced": {
+        "api_flooding": 0.776,
+        "bola": 0.715,
+        "brute_force": 0.887,
+        "credential_stuffing": 0.88,
+        "parameter_tampering": 0.857,
+        "sql_injection": 0.992,
+        "token_replay": 0.937
+      },
+      "ci_hard_block": {
+        "benign_flag_rate": {
+          "point": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.4273,
+          "ci95": [
+            0.3757,
+            0.4864
+          ]
+        }
+      },
+      "ci_any_enforcement": {
+        "benign_flag_rate": {
+          "point": 0.0115,
+          "ci95": [
+            0.008,
+            0.0154
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.8383,
+          "ci95": [
+            0.8247,
+            0.8519
+          ]
+        }
+      }
+    },
+    "+objects_60s_rule": {
+      "benign_blocked_n": 0,
+      "benign_throttled_n": 77,
+      "n_benign": 6716,
+      "attack_enforced": 0.8383,
+      "attack_blocked": 0.4273,
+      "per_attack_enforced": {
+        "api_flooding": 0.776,
+        "bola": 0.715,
+        "brute_force": 0.887,
+        "credential_stuffing": 0.88,
+        "parameter_tampering": 0.857,
+        "sql_injection": 0.992,
+        "token_replay": 0.937
+      },
+      "ci_hard_block": {
+        "benign_flag_rate": {
+          "point": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.4273,
+          "ci95": [
+            0.3757,
+            0.4864
+          ]
+        }
+      },
+      "ci_any_enforcement": {
+        "benign_flag_rate": {
+          "point": 0.0115,
+          "ci95": [
+            0.008,
+            0.0154
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.8383,
+          "ci95": [
+            0.8247,
+            0.8519
+          ]
+        }
+      }
+    },
+    "+login_fail_60s_rule": {
+      "benign_blocked_n": 0,
+      "benign_throttled_n": 77,
+      "n_benign": 6716,
+      "attack_enforced": 0.8385,
+      "attack_blocked": 0.4273,
+      "per_attack_enforced": {
+        "api_flooding": 0.776,
+        "bola": 0.715,
+        "brute_force": 0.888,
+        "credential_stuffing": 0.88,
+        "parameter_tampering": 0.857,
+        "sql_injection": 0.992,
+        "token_replay": 0.937
+      },
+      "ci_hard_block": {
+        "benign_flag_rate": {
+          "point": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.4273,
+          "ci95": [
+            0.3757,
+            0.4864
+          ]
+        }
+      },
+      "ci_any_enforcement": {
+        "benign_flag_rate": {
+          "point": 0.0115,
+          "ci95": [
+            0.008,
+            0.0154
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.8385,
+          "ci95": [
+            0.8248,
+            0.8522
+          ]
+        }
+      }
+    },
+    "+src_req_60s_rule": {
+      "benign_blocked_n": 0,
+      "benign_throttled_n": 77,
+      "n_benign": 6716,
+      "attack_enforced": 0.8385,
+      "attack_blocked": 0.4273,
+      "per_attack_enforced": {
+        "api_flooding": 0.776,
+        "bola": 0.715,
+        "brute_force": 0.888,
+        "credential_stuffing": 0.88,
+        "parameter_tampering": 0.857,
+        "sql_injection": 0.992,
+        "token_replay": 0.937
+      },
+      "ci_hard_block": {
+        "benign_flag_rate": {
+          "point": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.4273,
+          "ci95": [
+            0.3757,
+            0.4864
+          ]
+        }
+      },
+      "ci_any_enforcement": {
+        "benign_flag_rate": {
+          "point": 0.0115,
+          "ci95": [
+            0.008,
+            0.0154
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.8385,
+          "ci95": [
+            0.8248,
+            0.8522
+          ]
+        }
+      }
+    },
+    "+rate_limiter_v7": {
+      "benign_blocked_n": 0,
+      "benign_throttled_n": 77,
+      "n_benign": 6716,
+      "attack_enforced": 0.8385,
+      "attack_blocked": 0.4273,
+      "per_attack_enforced": {
+        "api_flooding": 0.776,
+        "bola": 0.715,
+        "brute_force": 0.888,
+        "credential_stuffing": 0.88,
+        "parameter_tampering": 0.857,
+        "sql_injection": 0.992,
+        "token_replay": 0.937
+      },
+      "ci_hard_block": {
+        "benign_flag_rate": {
+          "point": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.4273,
+          "ci95": [
+            0.3757,
+            0.4864
+          ]
+        }
+      },
+      "ci_any_enforcement": {
+        "benign_flag_rate": {
+          "point": 0.0115,
+          "ci95": [
+            0.008,
+            0.0154
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.8385,
+          "ci95": [
+            0.8248,
+            0.8522
+          ]
+        }
+      }
+    },
+    "nested_full": {
+      "benign_blocked_n": 3,
+      "benign_throttled_n": 103,
+      "n_benign": 6716,
+      "attack_enforced": 0.8387,
+      "attack_blocked": 0.4273,
+      "per_attack_enforced": {
+        "api_flooding": 0.776,
+        "bola": 0.715,
+        "brute_force": 0.89,
+        "credential_stuffing": 0.88,
+        "parameter_tampering": 0.857,
+        "sql_injection": 0.992,
+        "token_replay": 0.937
+      },
+      "ci_hard_block": {
+        "benign_flag_rate": {
+          "point": 0.0004,
+          "ci95": [
+            0.0,
+            0.0013
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.4273,
+          "ci95": [
+            0.3757,
+            0.4864
+          ]
+        }
+      },
+      "ci_any_enforcement": {
+        "benign_flag_rate": {
+          "point": 0.0158,
+          "ci95": [
+            0.008,
+            0.0283
+          ]
+        },
+        "attack_enforce_rate": {
+          "point": 0.8387,
+          "ci95": [
+            0.825,
+            0.8523
+          ]
+        }
+      }
+    }
+  },
+  "rules": {
+    "sql_rule": {
+      "fires": 375,
+      "fires_on_benign": 0,
+      "new_benign_flags": 0,
+      "attacks_recovered": 12,
+      "precision": 1.0
+    },
+    "bola_10s_rule": {
+      "fires": 238,
+      "fires_on_benign": 0,
+      "new_benign_flags": 0,
+      "attacks_recovered": 0,
+      "precision": 1.0
+    },
+    "tamper_rule": {
+      "fires": 197,
+      "fires_on_benign": 0,
+      "new_benign_flags": 0,
+      "attacks_recovered": 27,
+      "precision": 1.0
+    },
+    "objects_60s_rule": {
+      "fires": 20,
+      "fires_on_benign": 0,
+      "new_benign_flags": 0,
+      "attacks_recovered": 0,
+      "precision": 1.0
+    },
+    "login_fail_60s_rule": {
+      "fires": 1,
+      "fires_on_benign": 0,
+      "new_benign_flags": 0,
+      "attacks_recovered": 1,
+      "precision": 1.0
+    },
+    "src_req_60s_rule": {
+      "fires": 0,
+      "fires_on_benign": 0,
+      "new_benign_flags": 0,
+      "attacks_recovered": 0,
+      "precision": 0.0
+    },
+    "flood_floor_effect": {
+      "benign_released": 23,
+      "attacks_released": 169
+    }
+  },
+  "long_rule_sweeps": {
+    "validation": {
+      "login_fail_60s": [
+        {
+          "h": 2,
+          "fires": 492,
+          "fires_ben": 12,
+          "hit_cls": 442,
+          "n_cls": 616,
+          "n_ben": 6717
+        },
+        {
+          "h": 3,
+          "fires": 365,
+          "fires_ben": 0,
+          "hit_cls": 356,
+          "n_cls": 616,
+          "n_ben": 6717
+        },
+        {
+          "h": 4,
+          "fires": 279,
+          "fires_ben": 0,
+          "hit_cls": 278,
+          "n_cls": 616,
+          "n_ben": 6717
+        },
+        {
+          "h": 5,
+          "fires": 209,
+          "fires_ben": 0,
+          "hit_cls": 209,
+          "n_cls": 616,
+          "n_ben": 6717
+        },
+        {
+          "h": 6,
+          "fires": 150,
+          "fires_ben": 0,
+          "hit_cls": 150,
+          "n_cls": 616,
+          "n_ben": 6717
+        },
+        {
+          "h": 8,
+          "fires": 57,
+          "fires_ben": 0,
+          "hit_cls": 57,
+          "n_cls": 616,
+          "n_ben": 6717
+        }
+      ],
+      "objects_60s": [
+        {
+          "h": 8,
+          "fires": 183,
+          "fires_ben": 12,
+          "hit_cls": 171,
+          "n_cls": 665,
+          "n_ben": 6717
+        },
+        {
+          "h": 9,
+          "fires": 126,
+          "fires_ben": 8,
+          "hit_cls": 118,
+          "n_cls": 665,
+          "n_ben": 6717
+        },
+        {
+          "h": 10,
+          "fires": 80,
+          "fires_ben": 4,
+          "hit_cls": 76,
+          "n_cls": 665,
+          "n_ben": 6717
+        },
+        {
+          "h": 12,
+          "fires": 15,
+          "fires_ben": 0,
+          "hit_cls": 15,
+          "n_cls": 665,
+          "n_ben": 6717
+        },
+        {
+          "h": 15,
+          "fires": 0,
+          "fires_ben": 0,
+          "hit_cls": 0,
+          "n_cls": 665,
+          "n_ben": 6717
+        }
+      ],
+      "src_req_60s": [
+        {
+          "h": 20,
+          "fires": 964,
+          "fires_ben": 108,
+          "hit_cls": 856,
+          "n_cls": 1605,
+          "n_ben": 6717
+        },
+        {
+          "h": 25,
+          "fires": 729,
+          "fires_ben": 48,
+          "hit_cls": 681,
+          "n_cls": 1605,
+          "n_ben": 6717
+        },
+        {
+          "h": 30,
+          "fires": 520,
+          "fires_ben": 0,
+          "hit_cls": 520,
+          "n_cls": 1605,
+          "n_ben": 6717
+        },
+        {
+          "h": 35,
+          "fires": 391,
+          "fires_ben": 0,
+          "hit_cls": 391,
+          "n_cls": 1605,
+          "n_ben": 6717
+        },
+        {
+          "h": 40,
+          "fires": 266,
+          "fires_ben": 0,
+          "hit_cls": 266,
+          "n_cls": 1605,
+          "n_ben": 6717
+        },
+        {
+          "h": 50,
+          "fires": 85,
+          "fires_ben": 0,
+          "hit_cls": 85,
+          "n_cls": 1605,
+          "n_ben": 6717
+        }
+      ],
+      "tamper_v7": {
+        "fires": 197,
+        "fires_ben": 0,
+        "hit_cls": 197,
+        "n_cls": 400
+      }
+    },
+    "test": {
+      "login_fail_60s": [
+        {
+          "h": 2,
+          "fires": 492,
+          "fires_ben": 3,
+          "hit_cls": 447,
+          "n_cls": 617,
+          "n_ben": 6716
+        },
+        {
+          "h": 3,
+          "fires": 370,
+          "fires_ben": 0,
+          "hit_cls": 360,
+          "n_cls": 617,
+          "n_ben": 6716
+        },
+        {
+          "h": 4,
+          "fires": 283,
+          "fires_ben": 0,
+          "hit_cls": 282,
+          "n_cls": 617,
+          "n_ben": 6716
+        },
+        {
+          "h": 5,
+          "fires": 213,
+          "fires_ben": 0,
+          "hit_cls": 213,
+          "n_cls": 617,
+          "n_ben": 6716
+        },
+        {
+          "h": 6,
+          "fires": 153,
+          "fires_ben": 0,
+          "hit_cls": 153,
+          "n_cls": 617,
+          "n_ben": 6716
+        },
+        {
+          "h": 8,
+          "fires": 60,
+          "fires_ben": 0,
+          "hit_cls": 60,
+          "n_cls": 617,
+          "n_ben": 6716
+        }
+      ],
+      "objects_60s": [
+        {
+          "h": 8,
+          "fires": 176,
+          "fires_ben": 3,
+          "hit_cls": 173,
+          "n_cls": 664,
+          "n_ben": 6716
+        },
+        {
+          "h": 9,
+          "fires": 120,
+          "fires_ben": 2,
+          "hit_cls": 118,
+          "n_cls": 664,
+          "n_ben": 6716
+        },
+        {
+          "h": 10,
+          "fires": 76,
+          "fires_ben": 1,
+          "hit_cls": 75,
+          "n_cls": 664,
+          "n_ben": 6716
+        },
+        {
+          "h": 12,
+          "fires": 20,
+          "fires_ben": 0,
+          "hit_cls": 20,
+          "n_cls": 664,
+          "n_ben": 6716
+        },
+        {
+          "h": 15,
+          "fires": 0,
+          "fires_ben": 0,
+          "hit_cls": 0,
+          "n_cls": 664,
+          "n_ben": 6716
+        }
+      ],
+      "src_req_60s": [
+        {
+          "h": 20,
+          "fires": 883,
+          "fires_ben": 27,
+          "hit_cls": 856,
+          "n_cls": 1605,
+          "n_ben": 6716
+        },
+        {
+          "h": 25,
+          "fires": 695,
+          "fires_ben": 12,
+          "hit_cls": 683,
+          "n_cls": 1605,
+          "n_ben": 6716
+        },
+        {
+          "h": 30,
+          "fires": 525,
+          "fires_ben": 0,
+          "hit_cls": 525,
+          "n_cls": 1605,
+          "n_ben": 6716
+        },
+        {
+          "h": 35,
+          "fires": 389,
+          "fires_ben": 0,
+          "hit_cls": 389,
+          "n_cls": 1605,
+          "n_ben": 6716
+        },
+        {
+          "h": 40,
+          "fires": 271,
+          "fires_ben": 0,
+          "hit_cls": 271,
+          "n_cls": 1605,
+          "n_ben": 6716
+        },
+        {
+          "h": 50,
+          "fires": 83,
+          "fires_ben": 0,
+          "hit_cls": 83,
+          "n_cls": 1605,
+          "n_ben": 6716
+        }
+      ],
+      "tamper_v7": {
+        "fires": 197,
+        "fires_ben": 0,
+        "hit_cls": 197,
+        "n_cls": 399
+      }
+    }
+  },
+  "event_level_offline_v7": {
+    "api_flooding": {
+      "episodes": 40,
+      "episode_detection": 1.0,
+      "request_enforcement": 0.736,
+      "first_request_enforced": 0.0,
+      "median_requests_before_first": 9.0,
+      "median_seconds_to_first": 0.194
+    },
+    "bola": {
+      "episodes": 80,
+      "episode_detection": 1.0,
+      "request_enforcement": 0.682,
+      "first_request_enforced": 0.05,
+      "median_requests_before_first": 2.0,
+      "median_seconds_to_first": 0.361
+    },
+    "brute_force": {
+      "episodes": 80,
+      "episode_detection": 1.0,
+      "request_enforcement": 0.874,
+      "first_request_enforced": 0.45,
+      "median_requests_before_first": 1.0,
+      "median_seconds_to_first": 0.446
+    },
+    "credential_stuffing": {
+      "episodes": 300,
+      "episode_detection": 0.88,
+      "request_enforcement": 0.88,
+      "first_request_enforced": 0.88,
+      "median_requests_before_first": 0.0,
+      "median_seconds_to_first": 0.0
+    },
+    "parameter_tampering": {
+      "episodes": 80,
+      "episode_detection": 1.0,
+      "request_enforcement": 0.852,
+      "first_request_enforced": 0.762,
+      "median_requests_before_first": 0.0,
+      "median_seconds_to_first": 0.0
+    },
+    "sql_injection": {
+      "episodes": 80,
+      "episode_detection": 1.0,
+      "request_enforcement": 0.992,
+      "first_request_enforced": 0.975,
+      "median_requests_before_first": 0.0,
+      "median_seconds_to_first": 0.0
+    },
+    "token_replay": {
+      "episodes": 80,
+      "episode_detection": 1.0,
+      "request_enforcement": 0.93,
+      "first_request_enforced": 0.762,
+      "median_requests_before_first": 0.0,
+      "median_seconds_to_first": 0.0
+    }
+  }
+}

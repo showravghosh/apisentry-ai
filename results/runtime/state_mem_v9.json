@@ -1,0 +1,29 @@
+{
+  "max_keys_per_structure": 100000,
+  "rows": [
+    {
+      "tracked_sources": 1000,
+      "state_MB": 6.2,
+      "keys_total": 7000,
+      "bytes_per_source": 6237
+    },
+    {
+      "tracked_sources": 10000,
+      "state_MB": 61.6,
+      "keys_total": 70000,
+      "bytes_per_source": 6165
+    },
+    {
+      "tracked_sources": 50000,
+      "state_MB": 318.5,
+      "keys_total": 350000,
+      "bytes_per_source": 6370
+    },
+    {
+      "tracked_sources": 100000,
+      "state_MB": 637.0,
+      "keys_total": 700000,
+      "bytes_per_source": 6370
+    }
+  ]
+}

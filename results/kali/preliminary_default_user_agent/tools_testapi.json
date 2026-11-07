@@ -1,0 +1,426 @@
+{
+  "tools": {
+    "sqlmap": "1.10.10#stable",
+    "hydra": "Hydra v9.7 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).",
+    "ffuf": "ffuf version: 2.3.0",
+    "ab": "This is ApacheBench, Version 2.3 <$Revision: 1934973 $>"
+  },
+  "api": "testapi",
+  "results": {
+    "ModSecurity_CRS": {
+      "sqlmap": {
+        "n": 46,
+        "n403": 46,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 9.5
+      },
+      "hydra_brute": {
+        "n": 80,
+        "n403": 80,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 6.3
+      },
+      "stuffing_fixed": {
+        "n": 40,
+        "n403": 0,
+        "n429": 0,
+        "n_other_4xx": 40,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 10.8
+      },
+      "stuffing_rotate": {
+        "n": 40,
+        "n403": 0,
+        "n429": 0,
+        "n_other_4xx": 40,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 9.7
+      },
+      "ffuf_enumeration": {
+        "n": 40,
+        "n403": 40,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 2.7
+      },
+      "ffuf_token_reuse": {
+        "n": 30,
+        "n403": 30,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 6.6
+      },
+      "ffuf_tampering_quantity": {
+        "n": 20,
+        "n403": 20,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 4.5
+      },
+      "ffuf_tampering_price": {
+        "n": 10,
+        "n403": 10,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 2.3
+      },
+      "ab_flooding": {
+        "n": 300,
+        "n403": 0,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 6.2
+      }
+    },
+    "RateLimit_baseline": {
+      "sqlmap": {
+        "n": 53,
+        "n403": 0,
+        "n429": 1,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 16.9
+      },
+      "hydra_brute": {
+        "n": 7,
+        "n403": 0,
+        "n429": 2,
+        "n_other_4xx": 5,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 1.6
+      },
+      "stuffing_fixed": {
+        "n": 40,
+        "n403": 0,
+        "n429": 35,
+        "n_other_4xx": 5,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 2.0
+      },
+      "stuffing_rotate": {
+        "n": 40,
+        "n403": 0,
+        "n429": 0,
+        "n_other_4xx": 40,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 9.3
+      },
+      "ffuf_enumeration": {
+        "n": 40,
+        "n403": 0,
+        "n429": 0,
+        "n_other_4xx": 10,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 3.7
+      },
+      "ffuf_token_reuse": {
+        "n": 30,
+        "n403": 0,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 8.3
+      },
+      "ffuf_tampering_quantity": {
+        "n": 20,
+        "n403": 0,
+        "n429": 0,
+        "n_other_4xx": 20,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 5.2
+      },
+      "ffuf_tampering_price": {
+        "n": 10,
+        "n403": 0,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 3.0
+      },
+      "ab_flooding": {
+        "n": 300,
+        "n403": 0,
+        "n429": 265,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 1.6
+      }
+    },
+    "APISentry_original_fresh": {
+      "sqlmap": {
+        "n": 52,
+        "n403": 48,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 2.5
+      },
+      "hydra_brute": {
+        "n": 82,
+        "n403": 76,
+        "n429": 0,
+        "n_other_4xx": 6,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 6.2
+      },
+      "stuffing_fixed": {
+        "n": 40,
+        "n403": 36,
+        "n429": 1,
+        "n_other_4xx": 3,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 4.8
+      },
+      "stuffing_rotate": {
+        "n": 40,
+        "n403": 0,
+        "n429": 0,
+        "n_other_4xx": 40,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 10.0
+      },
+      "ffuf_enumeration": {
+        "n": 40,
+        "n403": 36,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 2.4
+      },
+      "ffuf_token_reuse": {
+        "n": 30,
+        "n403": 28,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 6.7
+      },
+      "ffuf_tampering_quantity": {
+        "n": 20,
+        "n403": 13,
+        "n429": 2,
+        "n_other_4xx": 5,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 4.6
+      },
+      "ffuf_tampering_price": {
+        "n": 10,
+        "n403": 3,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 2.6
+      },
+      "ab_flooding": {
+        "n": 300,
+        "n403": 285,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 1.6
+      }
+    },
+    "APISentry_v7": {
+      "sqlmap": {
+        "n": 58,
+        "n403": 38,
+        "n429": 7,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 107.9
+      },
+      "hydra_brute": {
+        "n": 6,
+        "n403": 0,
+        "n429": 2,
+        "n_other_4xx": 4,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 1.3
+      },
+      "stuffing_fixed": {
+        "n": 40,
+        "n403": 30,
+        "n429": 7,
+        "n_other_4xx": 3,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 1.5
+      },
+      "stuffing_rotate": {
+        "n": 40,
+        "n403": 23,
+        "n429": 13,
+        "n_other_4xx": 4,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 1.7
+      },
+      "ffuf_enumeration": {
+        "n": 40,
+        "n403": 34,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 2.7
+      },
+      "ffuf_token_reuse": {
+        "n": 30,
+        "n403": 17,
+        "n429": 7,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 7.0
+      },
+      "ffuf_tampering_quantity": {
+        "n": 20,
+        "n403": 20,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 4.4
+      },
+      "ffuf_tampering_price": {
+        "n": 10,
+        "n403": 10,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 2.1
+      },
+      "ab_flooding": {
+        "n": 300,
+        "n403": 0,
+        "n429": 286,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 1.4
+      }
+    },
+    "APISentry_v8": {
+      "sqlmap": {
+        "n": 57,
+        "n403": 38,
+        "n429": 6,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 101.1
+      },
+      "hydra_brute": {
+        "n": 6,
+        "n403": 0,
+        "n429": 2,
+        "n_other_4xx": 4,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 1.1
+      },
+      "stuffing_fixed": {
+        "n": 40,
+        "n403": 30,
+        "n429": 7,
+        "n_other_4xx": 3,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 3.2
+      },
+      "stuffing_rotate": {
+        "n": 40,
+        "n403": 23,
+        "n429": 13,
+        "n_other_4xx": 4,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 2.2
+      },
+      "ffuf_enumeration": {
+        "n": 40,
+        "n403": 34,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 2.5
+      },
+      "ffuf_token_reuse": {
+        "n": 30,
+        "n403": 17,
+        "n429": 7,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 6.9
+      },
+      "ffuf_tampering_quantity": {
+        "n": 20,
+        "n403": 20,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 4.3
+      },
+      "ffuf_tampering_price": {
+        "n": 10,
+        "n403": 10,
+        "n429": 0,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 2.3
+      },
+      "ab_flooding": {
+        "n": 300,
+        "n403": 0,
+        "n429": 283,
+        "n_other_4xx": 0,
+        "n_5xx": 0,
+        "n_err": 0,
+        "seconds": 1.3
+      }
+    }
+  }
+}
