@@ -1,9 +1,11 @@
-# APISentry AI - Live Demo Guide
+# APISentry - Live Demo Guide
 
 Every attack below is a real attack technique, run only on our own gateway
-(localhost). Watch the dashboard while you run each one. The first few requests
-may be ALLOWED, then APISentry BLOCKS them. This is normal: the tool decides
-from behavior, not from a single request.
+(localhost). Watch the dashboard while you run each one. SQL injection,
+parameter tampering and BOLA-like enumeration are BLOCKED (HTTP 403). For
+behavioural attacks the first few requests may be ALLOWED, then APISentry
+RATE-LIMITS (HTTP 429) or blocks them. This is normal: the tool decides from
+behaviour, not from a single request.
 
 ## Start
 
